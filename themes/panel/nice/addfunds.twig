@@ -1,0 +1,295 @@
+{% include 'header1.twig' %}
+
+<div class="def_wraper">
+    <div class="container-fluid">
+       <div class="row">
+
+          <div class="col-md-6">
+             <div class="card card_v2">
+                <div class="card-body">
+                  <div id="newOrderTabsWrap">
+                   <ul class="nav nav-pills tab_btn_wrap mb-3" id="pills-tab" role="tablist">
+                                          <li class="nav-item" role="presentation">
+                         <button class="nav-link active" id="pills-order-tab" data-bs-toggle="pill" data-bs-target="#pills-order" type="button" role="tab" aria-controls="pills-order" aria-selected="true"><i class="far fa-credit-card"></i> Add Fund</button>
+                      </li>
+                                            <li class="nav-item" role="presentation">
+                         <button class="nav-link" id="pills-favorite-tab" data-bs-toggle="pill" data-bs-target="#pills-favorite" type="button" role="tab" aria-controls="pills-favorite" aria-selected="false"> <i class="fas fa-redo-alt"></i> Fund History</button>
+                      </li>
+                   </ul>
+                  </div>
+                   <div class="tab-content tab_wrap" id="pills-tabContent">
+                       
+                     	{% if error %}
+								  <div class="alert alert-dismissible alert-danger">
+									<button type="button" class="close" data-dismiss="alert">×</button>
+									{{ errorText }}
+								  </div>
+								{% endif %}
+								{% if success %}
+								  <div class="alert alert-dismissible alert-success">
+									<button type="button" class="close" data-dismiss="alert">×</button>
+									{{ successText }}
+								  </div>
+								{% endif %}
+                       
+                                          <div class="tab-pane fade show active" id="pills-order" role="tabpanel" aria-labelledby="pills-order-tab">
+                        <form  method="post" action="">
+                                                                                    <div class="form-group">
+                              <label for="method" class="control-label">Method</label>
+                              <select class="form-control" id="payment_method" name="payment_type">
+                   {% for payment in paymentsList %}
+    <option value="{{ payment['id'] }}" {% if data['payment_type'] == payment['id'] %} selected {% endif %} >{{ payment['method_name'] }}</option>
+                    {% endfor %}
+    </select>
+    </div>
+                            <div class="form-group">
+                              <label for="amount" class="control-label">Amount</label>
+                              <input type="number" class="form-control"  name="payment_amount" id="amount">
+                            </div>
+                                                       
+                            <button type="submit" class="btn btn-primary d-block w-100">Pay</button>
+                          </form>
+                      </div>
+                                          <div class="tab-pane fade" id="pills-favorite" role="tabpanel" aria-labelledby="pills-favorite-tab">
+                        <div class="table-responsive addfund_responsive">
+                            <table class="table" id="addfundTable">
+                                <thead>
+                                <tr>
+                                  <th scope="col">ID</th>
+                                  <th scope="col">Date</th>
+                                  <th scope="col">Method</th>
+                                  <th scope="col">Amount</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                             <td colspan="9">
+            {% for transaction in transactions %}
+              <tr>
+                <td>{{ transaction['payment_id'] }}</td>
+ <td>{{ transaction['payment_create_date'] }}</td>
+
+                <td class="width-40">{{ transaction['method_name'] }}</td>
+                               
+<td>
+              {{ (transaction['payment_amount']*currency['value']) }}      
+              </td>  
+                
+                
+              </tr>
+            {% endfor %}
+</td>
+          </tbody>
+        </table>   
+                              </table>
+                        </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       <!--  <div class="col-md-6">
+             <div class="card card_v2">
+                <div class="card-body">
+                  <div id="def_side_title">
+                    <div class="icon">
+                      <i class="far fa-landmark"></i>
+                    </div>
+                    <div class="name">
+                      More about payments
+                    </div>
+                  </div>  -->
+                  
+                  
+             <div class="col-md-6">
+             <div class="card card_v2">
+                <div class="card-body">
+                  <div id="def_side_title">
+                    <div class="icon">
+                      <i class="far fa-landmark"></i>
+                    </div>
+                    <div class="name">
+                     Paytm QR
+                    </div>
+                  </div>
+                
+     
+        <div class="well">
+         <form method="post" action="addfunds">
+                    <center><img width="85%" src="/paytmqr.png"></center>
+                            <div class="form-group col-md-12">
+                        <label for="method" class="control-label">Amount</label>
+                        <input class="form-control" name="payment_amount" value="{{ data['payment_amount'] }}">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="method" class="control-label">Order ID</label>
+                        <p>Enter Transaction/Order ID without spaces. Example - 202010122210100058</p>
+                        <input class="form-control" name="paytmqr_orderid" value="{{ data['paytmqr_orderid'] }}">
+                    </div>
+              <input type="hidden" class="form-control" name="payment_type" value="14">
+     
+                      <button type="submit" class="w-100 btn btn-primary">Submit</button>
+            </form>
+        </div>
+      </div> 
+                  
+                  
+                <!--  <div id="def_side_content">
+                    <div class="accordion paymentpage site_accordion" id="accordionExample">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <i class="far fa-dove"></i> Payment 1 
+                          </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <i class="fab fa-cc-paypal"></i> Payment 2
+                          </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <i class="fas fa-credit-card-front"></i> Payment 3 
+                          </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingfour">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
+                            <i class="fab fa-cc-visa"></i> Payment 4
+                          </button>
+                        </h2>
+                        <div id="collapsefour" class="accordion-collapse collapse" aria-labelledby="headingfour" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingfive">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
+                            <i class="far fa-credit-card"></i>  Payment 5
+                          </button>
+                        </h2>
+                        <div id="collapsefive" class="accordion-collapse collapse" aria-labelledby="headingfive" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingsix">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsesix" aria-expanded="false" aria-controls="collapsesix">
+                            <i class="far fa-circle"></i> Payment 6
+                          </button>
+                        </h2>
+                        <div id="collapsesix" class="accordion-collapse collapse" aria-labelledby="headingsix" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingseven">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseseven" aria-expanded="false" aria-controls="collapseseven">
+                            <i class="fab fa-bitcoin"></i> Payment 7
+                          </button>
+                        </h2>
+                        <div id="collapseseven" class="accordion-collapse collapse" aria-labelledby="headingseven" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <strong>
+
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingEight">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                            <i class="fas fa-money-bill"></i> Other 
+                          </button>
+                        </h2>
+                        <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+  
+                  </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+  </div> -->
+  
+
+
+{% if kashier_code %}
+
+ <style>
+        #el-kashier-button{
+            display: none;
+        }
+    </style>
+	
+	<script>
+	
+         var interval = setInterval(function () {
+            var link =$('#el-kashier-button');
+            if(link.length){
+                link.click();
+                clearInterval(interval);
+            }
+        }, 1000);
+  
+ 
+</script>
+
+{{ kashier_code  }}
+
+{{ unset_kashier_code  }}
+{% endif %}
+	
+
+
+<script>
+    
+   $("#method").on('change', function() {
+       
+       if($(this).val() == 21){
+              $(".normal-payment").hide();
+               $(".custom-payment-content").show();
+       }
+       else{
+            $(".custom-payment-content").hide();
+           $(".normal-payment").show();
+       }
+       
+   });
+</script>
+
+{% include 'footer1.twig' %}

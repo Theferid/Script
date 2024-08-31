@@ -1,0 +1,161 @@
+{% include 'header1.twig' %}
+
+ {% if error %}
+        <div class="alert alert-dismissible alert-danger">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          {{ errorText }}
+        </div>
+      {% endif %}
+      {% if success %}
+        <div class="alert alert-dismissible alert-success">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          {{ successText }}
+        </div>
+      {% endif %}
+                    <!-- Account Page Content  -->
+<div id="accountpage">
+    <div class="container-fluid">
+                <div class="row">
+            
+           
+            <div class="col-md-6">
+                <div class="card card_v2 mb-4">
+                    <div class="card-body">
+                            <div id="def_side_title">
+                                <div class="icon">
+                                    <i class="fal fa-user-circle"></i>
+                                </div>
+                                <div class="name">
+                               Profile Image
+                                </div>
+                            </div>
+                            <div class="img text-center">
+                                <img src="{{ site['logo'] }}" class="mb-2" width="150" height='150' alt="">
+                                <p class="text-danger" style="font-size:10px">Recommended Size : 150px X 150px and under 500kb</p>
+                            </div>
+                       <!--  <div class="mb-3">
+                             <label for="file">Upload Image</label>
+                             <input type="file" class="form-control" id="file">
+                         </div> -->
+                         <button class="btn btn-primary w-100" onclick="uploadProfileImage()">{{ user["username"]  }}</button>
+                    </div>
+                </div> 
+                <div class="card card_v2 mb-3">
+                    <div class="card-body">
+                            <div id="def_side_title">
+                                <div class="icon">
+                                    <i class="fal fa-user-circle"></i>
+                                </div>
+                                <div class="name">
+                                User Infos
+                                </div>
+                            </div>
+                         <div class="mb-3">
+                             <label for="">Username</label>
+                             <input type="text" class="form-control" id="username" value="{{ user['username'] }}" readonly>
+                         </div>
+                         <div class="mb-3">
+                            <label for="">Email Address</label>
+                            <input type="text" class="form-control" value="{{ user['email'] }}" readonly>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card card_v2 mb-3">
+                    <div class="card-body">
+
+                            <div id="def_side_title">
+                                <div class="icon">
+                                    <i class="far fa-lock"></i>
+                                </div>
+                                <div class="name">
+                                Account Password Manager
+                                </div>
+                            </div>
+                            <form action="" method="post">
+                                            
+                                <div class="mb-3">
+                                    <label for="current">Current password</label>
+                                    <input type="password" class="form-control" id="current" name="current_password">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="new">New password</label>
+                                    <input type="password" class="form-control" id="new" name="password">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="confirm">Confirm new password</label>
+                                    <input type="password" class="form-control" id="confirm" name="confirm_password">
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary d-block w-100">Change password</button>
+                            </form>
+                            
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <div class="card card_v2 mb-3">
+                    <div class="card-body">
+                            <div id="def_side_title">
+                                <div class="icon">
+                                    <i class="fad fa-key"></i>
+                                </div>
+                                <div class="name">
+                                 API Key Generator
+                                </div>
+                            </div>
+                            <form  action="account/newapikey" method="post">
+                                <div class="form-group">
+                                  <label for="key" class="control-label">API key</label>
+                                                                      <input type="text" class="form-control" id="api_key" value="********************************" readonly>
+                                                                  </div>
+                      
+                             
+                                <button type="submit" class="btn btn-primary d-block w-100">Generate new</button>
+                              </form>
+                        <br>
+                        <div class="alert alert-danger">
+                            When you click on "Generate new" it will Generate new key. This key is very sensitive informations of your account please avoid share this key. Thank you.
+                        </div>
+                    </div>
+                  </div>
+                
+                <!-- <div class="card card_v2 mb-3">
+                    <div class="card-body">
+                            <div id="def_side_title">
+                                <div class="icon">
+                                    <i class="far fa-clock"></i>
+                                </div>
+                                <div class="name">
+                                    Currency
+                                </div>
+                            </div>
+                            <form method="post" action="account/currency">
+                                <div class="form-group">
+                                  <label for="timezone" class="control-label">Currencies</label>
+                                  <select class="form-control" name="currency">
+                 
+<option {% if currency["id"] == "{{ user['currency'] }}" %} selected  {% endif %} value="{{ currency['id'] }}">Active:-{{ currency['name'] }}</option>
+{% for currencies in currencies %}
+                 <option value="{{ currencies["id"] }}">{{ currencies["name"] }}</option>
+                 {% endfor %}
+             </select>
+                                </div>
+                      
+                                
+                                <button type="submit" class="btn btn-primary d-block w-100">Save</button>
+                              </form>
+                    </div>
+                  </div>
+
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+{% include 'footer1.twig' %}

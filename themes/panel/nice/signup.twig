@@ -1,0 +1,128 @@
+{% include 'header.twig' %}
+
+
+<main class="noAuths">
+		      <section id="signup">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <div class="card card_v2 mb-5">
+          <div class="card-body">
+            <div class="signup_title">
+              <h1>Sign Up Now</h1>
+              <p>Are you ready to get started? Quickly signup and get your satisfaction from us.</p>
+              
+              {% if errorText %}
+								<div class="alert alert-dismissible alert-danger">
+								  <button type="button" class="close" data-dismiss="alert">×</button>
+								  {{ errorText }}
+								</div>
+							  {% endif %}
+							  {% if successText %}
+								<div class="alert alert-dismissible alert-success">
+								  <button type="button" class="close" data-dismiss="alert">×</button>
+								  {{ successText }}
+								</div>
+							  {% endif %}
+              
+            </div>
+            <form  action="" method="post">
+                            
+              <div class="form_group mb-3">
+                <div class="form_icon">
+                  
+                    <i class="fas fa-user-astronaut"></i>
+                </div>
+                
+            <input type="text" class="form-control" name="username" value="{{ data['username'] }}" placeholder="Username">
+            
+             </div>
+
+              
+              <div class="form_group mb-3">
+                <div class="form_icon">
+                  <i class="fas fa-user-circle"></i>
+                </div>
+                <input type="text" class="form-control"  name="first_name" value="{{ data['first_name'] }}" placeholder="First name">
+                
+             </div>
+
+              <div class="form_group mb-3">
+                <div class="form_icon">
+                  <i class="fas fa-user-circle"></i>
+                </div>
+                 <input type="text" class="form-control"  name="last_name" value="{{ data['last_name'] }}" placeholder="Last name">
+                
+             </div>
+
+              
+              <div class="form_group mb-3">
+                <div class="form_icon">
+                  <i class="far fa-envelope"></i>
+                </div>
+                 <input type="text" class="form-control" name="email" value="{{ data['email'] }}" placeholder="Email">
+                
+             </div>
+
+              
+                <div class="form_group mb-3">
+                  <div class="form_icon">
+                    <i class="fab fa-whatsapp"></i>
+                  </div>
+                   <input type="text" class="form-control" name="telephone" value="{{ data['telephone'] }}" placeholder="Whatsapp Number">
+                 
+              </div>
+              
+              <div class="form_group mb-3">
+                <div class="form_icon">
+                  <i class="far fa-lock"></i>
+                </div>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+            </div>
+            
+
+            <div class="form_group mb-3">
+              <div class="form_icon">
+                <i class="far fa-lock"></i>
+              </div>
+              <input type="password" class="form-control" id="confirm" name="password_again" placeholder=" Confirm password">
+          </div>
+          
+          
+          
+                              {% if captcha %}
+            <div class="form-group">
+              <div class="g-recaptcha" data-sitekey="{{ captchaKey }}"></div>
+            </div>
+          {% endif %}
+                                      <div class="checkbox">
+            <label>
+              <input type="checkbox" name="terms" value="1"> {{ lang['signup.accept_terms_text'] }}
+            </label>
+          </div>
+          
+          
+          
+          
+          
+          
+              <button type="submit" class="btn btn__home btn__fill w-100 btn_login">Sign up</button>
+            </form>
+            <p class="text-center">
+              Already have an account? <a href="/">Sign in</a>
+            </p>
+  
+  
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  </div>
+  
+</section>
+        </main>
+
+
+{% include 'footer.twig' %}

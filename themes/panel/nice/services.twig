@@ -1,0 +1,328 @@
+    {% include 'header.twig' %}
+
+
+
+<main class="noAuths">
+		      <div id="top_services">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card_v2">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="service_button_filter">
+                                    <button class="btn_ser_filter btn_all" onclick="allSearch()">
+                                        All
+                                    </button>
+
+                                    <button class="btn_ser_filter btn_fb"  onclick="btnFltr(this)"
+                                    data-value="facebook">
+                                        <span class="icon">
+                                            <i class="fab fa-facebook"></i>
+                                        </span>
+                                        
+                                    </button>
+
+                                    <button class="btn_ser_filter btn_tw"  onclick="btnFltr(this)"
+                                    data-value="twitter">
+                                        <span class="icon">
+                                            <i class="fab fa-twitter"></i>
+                                        </span>
+                                        
+                                    </button>
+
+                                    <button class="btn_ser_filter btn_ig"  onclick="btnFltr(this)"
+                                    data-value="instagram">
+                                        <span class="icon">
+                                            <i class="fab fa-instagram"></i>
+                                        </span>
+                                        
+                                    </button>
+
+
+                                    <button class="btn_ser_filter btn_in"  onclick="btnFltr(this)"
+                                    data-value="linkedin">
+                                        <span class="icon">
+                                            <i class="fab fa-linkedin"></i>
+                                        </span>
+                                        
+                                    </button>
+
+
+                                    <button class="btn_ser_filter btn_yt"  onclick="btnFltr(this)"
+                                    data-value="youtube">
+                                        <span class="icon">
+                                            <i class="fab fa-youtube"></i>
+                                        </span>
+                                        
+                                    </button>
+
+
+                                    <button class="btn_ser_filter btn_sp"  onclick="btnFltr(this)"
+                                    data-value="spotify">
+                                        <span class="icon">
+                                            <i class="fab fa-spotify"></i>
+                                        </span>
+                                        
+                                    </button>
+                                    <button class="btn_ser_filter btn_tik"  onclick="btnFltr(this)"
+                                    data-value="tiktok">
+                                        <span class="icon">
+                                            <i class="fab fa-tiktok"></i>
+                                        </span>
+                                    </button>
+
+                                    <button class="btn_ser_filter btn_dis"  onclick="btnFltr(this)"
+                                    data-value="discord">
+                                        <span class="icon">
+                                            <i class="fab fa-discord"></i>
+                                        </span>
+                                    </button>
+
+                                    <button class="btn_ser_filter btn_traffic"  onclick="btnFltr(this)"
+                                    data-value="traffic">
+                                        <span class="icon">
+                                            <i class="fas fa-globe"></i>
+                                        </span>
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                         <div class="row">
+                           <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="drop_dwon_menu" id="cat_filter">
+                                            <div class="text_filter">
+                                                
+                                           <button class="btn mr-2 cat_btn_filter mb-sm-2" 
+ type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" 
+ aria-expanded="false">
+     <i class="fas fa-filter" style="font-size: 14px"></i>
+	 {{ lang['smmspot.services.filter.button.title'] }}
+  </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+<li><a  class="dropdown-item" onclick="javascript:filterService('All')">
+{{ lang['smmspot.services.filter.item.1'] }}</a></li>	
+   {% for category in serviceCategory %}
+<li><a  class="dropdown-item" onclick="javascript:filterService
+('{{ category["category_name"]|replace({" ":"-"}) }}')">
+{{ category["category_name"] }}</a></li>
+	   {% endfor %}
+                        </ul>
+                                              </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                                                                    <ul id="currency_changer">
+                                                <li>
+                                                    <div class="dropdown ">
+                                                     <!--   <button class="btn btn-primary dropdown-toggle mb-sm-2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="currencyToggler">
+                                                            <span>
+                                                                                                                                    USD $
+                                                                                                                            </span>
+                                                            <span class="caret"></span>
+                                                        </button> -->
+                                                      
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                                                            </div>
+                                    
+                                </div>
+                           </div>
+                           
+                          
+                           
+                           <div class="col-md-6"><div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search" id="searchService">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" data-filter-serch-btn="true">
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                           
+                                    </button>
+                                </span>
+                            
+                            </div>
+                           
+                           
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section id="table" class="services_page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="responsive-table def_table">
+                       <div class="table-responsive">
+                            <table class="table" id="service-table">
+                                {% for category in serviceCategory %}
+                                                                    <thead class="category_filterable category55">
+                                                                       
+                                        <tr class="catetitle" data-category="{{ category["category_name"] }}">
+                                            <td colspan="8">
+                                                                                                <strong>{{ category["category_name"] }}</strong>
+                                            </td>
+                                        </tr>
+                                        <tr data-category="{{ category["category_name"] }}">
+                                            <th>ID</th>
+                                            <th>Service</th>
+                                            <th>Rate per 1000</th>
+                                            <th>Min order</th>
+                                            <th>Max order</th>
+                                                                                            <th class="nowrap">Average time
+                                                    <span class="fa fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="The average time is based on 10 latest completed orders per 1000 quantity."></span>
+                                                </th>
+                                                                                                                                        <th>Description</th>
+                                                                                      <!--  <th>Order</th> -->
+                                        </tr>
+                                    </thead>
+
+
+{% for service in category['services'] %}
+
+                                    <tbody class="category_filterable category55">
+                                                                        <tr data-filter-table-category-id="{{ service['service_id'] }}">
+
+                                            <td data-filter-table-service-id="{{ service['service_id'] }}">
+              <span style="display: none;" id='servis_id'>{{ service['service_id'] }}</span>                                                {{ service['service_id'] }}
+                                            </td>
+                                            
+                                            <td class="service-name" id="serv_name_1496"
+                                     data-filter-table-service-name="true">
+                                                {{ service['service_name'] }}
+                                            </td>
+                                                         <td>                                           {{ currency["symbol"]  }}  {{ service['service_price'] *currency["value"]   }}                                        </td>
+
+                                            <td>
+                                                {{ service['service_min'] }}
+                                            </td>
+                                            <td>
+                                                 {{ service['service_max'] }}
+                                            </td>
+
+                                                                                            <td>{% if avarageTime %}
+                                                    <span class="average-time ser-id-1496"> {{ service['service_speed'] }}</span>
+                                              {% endif %}  </td>
+                                            
+                                                     <!-- services views -->                                       <td>
+                                                 <div class="tservice-des">
+                                <button data-bs-toggle="modal" data-bs-target="#sDet{{ service['service_id'] }}" class="btn btn-primary btn_serv btn_detail">View Details</button>
+                            </div>
+                        </div>
+							<div class="modal fade" id="sDet{{ service['service_id'] }}" tabindex="-1" aria-labelledby="servisDetayLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+										  {% if site['logo'] %}
+											<img src="{{ site['logo'] }}" height="35" alt="{{ site['site_name'] }}" title="{{ site['site_name'] }}">
+										  {% else %}
+											{{ site['site_name'] }}
+										  {% endif %}
+											<button class="btn ahbtn bs-2" data-bs-dismiss="modal" aria-label="Close">
+												<i class="fas fa-times"></i>
+											</button>
+										</div>
+										<div class="modal-body">
+											<div class="service-id-box">
+												{{ lang['neworder.service'] }} #{{ service['service_id'] }} 
+											</div>
+											<h3>{{ service['service_name'] }}</h3>
+											<style>
+											#servisDetay .modal-dialog .modal-body p {
+											    overflow-x: initial;
+											}
+											</style>
+											<div style="overflow: auto;">
+												{{service['service_description']}}
+											</div>
+											
+											<div class="services-info">
+												
+												<div class="d-flex justify-content-between">
+													<div class="si-item">
+														<div class="si-circle">
+															<i class="fas fa-bolt"></i>
+														</div>
+														<small>{{ lang['services.price'] }}</small>
+														<p> {{ currency["symbol"]  }}  {{ service['service_price'] *currency["value"]  }}</p>
+													</div>
+													<div class="si-item">
+														<div class="si-circle">
+															<i class="fas fa-arrow-alt-to-bottom"></i>
+														</div>
+														<small>Min</small>
+														<p>{{ service['service_min'] }}</p>
+													</div>	
+													<div class="si-item">
+														<div class="si-circle">
+															<i class="fas fa-arrow-alt-from-bottom"></i>
+														</div>
+														<small>Max</small>
+														<p>{{ service['service_max'] }}</p>
+													</div>
+												</div>
+												<a href="{{ site['url'] }}/?select_service_id={{ service['service_id'] }}&category_id={{category['category_id']}}" class="btn mr-2 cat_btn_filter mb-sm-2"><i class="fas fa-cart-plus"></i>&nbsp;Buy Now</a>
+                                              
+                                              
+											</div>
+											<div class="si-overlay"></div>
+											
+											
+											
+											<!-- services views -->
+											
+											
+											
+                                        </tr>
+
+                                                                 {% endfor%}   {% endfor%}            
+                                                                        </tbody>
+                                                            </table>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+  
+  
+
+<script>
+      function filterService(category) {
+        if (category == 'All')
+          $('.service-item.hidden').removeClass('hidden');
+        else {
+          $('.service-item').addClass('hidden');
+          $('.service-item[data-category="' + category + '"]').removeClass('hidden');
+        }
+        removeEmptyCategory();
+      }
+
+      function removeEmptyCategory() {
+        $('.service-title').each(function () {
+            var next = $(this).next();
+            var services = $(this).nextUntil('.service-title');
+            var empty = true;
+            services.each(function() {
+              if (!$(this).hasClass('hidden')) empty = false;
+            });
+            if (empty) $(this).addClass('hidden');
+        })
+      }
+</script>
+
+
+
+
+{% include 'footer.twig' %}

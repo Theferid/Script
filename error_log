@@ -1,0 +1,30 @@
+[04-Dec-2022 21:19:21 Europe/Istanbul] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and dripfeed=2' at line 1 in /home/apnascho/public_html/GlyconSMMScript.php:522
+Stack trace:
+#0 /home/apnascho/public_html/GlyconSMMScript.php(522): PDO->query('SELECT * FROM o...')
+#1 /home/apnascho/public_html/index.php(37): require_once('/home/apnascho/...')
+#2 {main}
+  thrown in /home/apnascho/public_html/GlyconSMMScript.php on line 522
+[25-Feb-2024 08:41:54 Europe/Istanbul] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and dripfeed=2' at line 1 in /home/socialcl/shop.socialclub.tech/GlyconSMMScript.php:522
+Stack trace:
+#0 /home/socialcl/shop.socialclub.tech/GlyconSMMScript.php(522): PDO->query('SELECT * FROM o...')
+#1 /home/socialcl/shop.socialclub.tech/index.php(37): require_once('/home/socialcl/...')
+#2 {main}
+  thrown in /home/socialcl/shop.socialclub.tech/GlyconSMMScript.php on line 522
+[25-Feb-2024 10:41:17 Europe/Istanbul] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and dripfeed=2' at line 1 in /home/socialcl/shop.socialclub.tech/GlyconSMMScript.php:522
+Stack trace:
+#0 /home/socialcl/shop.socialclub.tech/GlyconSMMScript.php(522): PDO->query('SELECT * FROM o...')
+#1 /home/socialcl/shop.socialclub.tech/index.php(37): require_once('/home/socialcl/...')
+#2 {main}
+  thrown in /home/socialcl/shop.socialclub.tech/GlyconSMMScript.php on line 522
+[26-Feb-2024 02:06:56 Europe/Istanbul] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and dripfeed=2' at line 1 in /home/socialcl/shop.socialclub.tech/GlyconSMMScript.php:522
+Stack trace:
+#0 /home/socialcl/shop.socialclub.tech/GlyconSMMScript.php(522): PDO->query('SELECT * FROM o...')
+#1 /home/socialcl/shop.socialclub.tech/index.php(37): require_once('/home/socialcl/...')
+#2 {main}
+  thrown in /home/socialcl/shop.socialclub.tech/GlyconSMMScript.php on line 522
+[26-Feb-2024 08:07:03 Europe/Istanbul] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and dripfeed=2' at line 1 in /home/socialcl/shop.socialclub.tech/GlyconSMMScript.php:522
+Stack trace:
+#0 /home/socialcl/shop.socialclub.tech/GlyconSMMScript.php(522): PDO->query('SELECT * FROM o...')
+#1 /home/socialcl/shop.socialclub.tech/index.php(37): require_once('/home/socialcl/...')
+#2 {main}
+  thrown in /home/socialcl/shop.socialclub.tech/GlyconSMMScript.php on line 522

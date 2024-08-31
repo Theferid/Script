@@ -1,0 +1,552 @@
+{% include 'header1.twig' %}
+
+
+ <!-- // page and other top info -->
+                    
+<section id="api">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="card card_v2 mb-4">
+                    <div class="card-body">
+                        <div id="def_side_title">
+                            <div class="icon">
+                                <i class="far fa-code"></i>
+                            </div>
+                            <div class="name">
+                              Api Documentations
+                            </div>
+                        </div>
+
+                        <table class="table table-bordered">
+                            <tbody>
+                            <tr>
+                              <td class="width-40">HTTP Method</td>
+                              <td>POST</td>
+                            </tr>
+                            <tr>
+                              <td>API URL</td>
+                              <td>{{ site["url"] }}/api/v2</td>
+                            </tr>
+                                                          <tr>
+                                <td>API Key</td>
+                                <td>Get an API key on the <a href="/account">Account</a> page</td>
+                              </tr>
+                                                        <tr>
+                              <td>Response format</td>
+                              <td>JSON</td>
+                            </tr>
+                          <!--  <tr>
+                                <td>Example codes</td>
+                                <td>  <a href="/example.txt" class="" target="_blank">Example of PHP code</a></td>
+                            </tr> -->
+                            </tbody>
+                          </table>
+                    </div>
+                </div>
+
+                <div class="card card_v2">
+                    <div class="card-body">
+                                                <div id="def_side_title">
+                            <div class="icon">
+                                <i class="far fa-code"></i>
+                            </div>
+                            <div class="name">
+                                Service list
+                            </div>
+                        </div>
+                                                  <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                              <th class="width-40">Parameters</th>
+                              <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                                          <tr>
+                                <td>key</td>
+                                <td>Your API key</td>
+                              </tr>
+                                                          <tr>
+                                <td>action</td>
+                                <td>services</td>
+                              </tr>
+                                                        </tbody>
+                          </table>
+                                    
+                        <p><strong>Example response</strong></p>
+            <pre>
+            [
+    {
+        "service": 1,
+        "name": "Followers",
+        "type": "Default",
+        "category": "First Category",
+        "rate": "0.90",
+        "min": "50",
+        "max": "10000",
+        "refill": true,
+        "cancel": true
+    },
+    {
+        "service": 2,
+        "name": "Comments",
+        "type": "Custom Comments",
+        "category": "Second Category",
+        "rate": "8",
+        "min": "10",
+        "max": "1500",
+        "refill": false,
+        "cancel": true
+    }
+]
+            </pre>
+                                              <div id="def_side_title">
+                            <div class="icon">
+                                <i class="far fa-code"></i>
+                            </div>
+                            <div class="name">
+                                Add order
+                            </div>
+                        </div>
+                                                                              <p>
+                              <form class="form-inline">
+                                <div class="form-group">
+                                  <select class="form-control input-sm" id="service_type">
+                                                                          <option value="0">Default</option>
+                                                                          <option value="10">Package</option>
+                                                                          <option value="2">Custom Comments</option>
+                                                                          <option value="6">Mentions Hashtag</option>
+                                                                          <option value="15">Comment Likes</option>
+                                                                          <option value="18">Comment Replies</option>
+                                                                      </select>
+                                </div>
+                              </form>
+                            </p>
+                                                                                   <div id="type_0" style="display:none;">
+                              <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                  <th class="width-40">Parameters</th>
+                                  <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                  <tr>
+                                    <td>key</td>
+                                    <td>Your API key</td>
+                                  </tr>
+                                                                  <tr>
+                                    <td>action</td>
+                                    <td>add</td>
+                                  </tr>
+                                                                  <tr>
+                                    <td>service</td>
+                                    <td>Service ID</td>
+                                  </tr>
+                                                                  <tr>
+                                    <td>link</td>
+                                    <td>Link to page</td>
+                                  </tr>
+                                                                  <tr>
+                                    <td>quantity</td>
+                                    <td>Needed quantity</td>
+                                  </tr>
+                                                                  <tr>
+                                    <td>runs (optional)</td>
+                                    <td>Runs to deliver</td>
+                                  </tr>
+                                                                  <tr>
+                                    <td>interval (optional)</td>
+                                    <td>Interval in minutes</td>
+                                  </tr>
+                                                                </tbody>
+                              </table>
+                            </div>
+                                                      <div id="type_10" style="display:none;">
+                              <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                  <th class="width-40">Parameters</th>
+                                  <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                  <tr>
+                                    <td>key</td>
+                                    <td>Your API key</td>
+                                  </tr>
+                                                                  <tr>
+                                    <td>action</td>
+                                    <td>add</td>
+                                  </tr>
+                                                                  <tr>
+                                    <td>service</td>
+                                    <td>Service ID</td>
+                                  </tr>
+                                                                  <tr>
+                                    <td>link</td>
+                                    <td>Link to page</td>
+                                  </tr>
+                                                                </tbody>
+                              </table>
+                            </div>
+                                                      <div id="type_2" style="display:none;">
+                              <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                  <th class="width-40">Parameters</th>
+                                  <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                  <tr>
+                                    <td>key</td>
+                                    <td>Your API key</td>
+                                  </tr>
+                                                                  <tr>
+                                    <td>action</td>
+                                    <td>add</td>
+                                  </tr>
+                                                                  <tr>
+                                    <td>service</td>
+                                    <td>Service ID</td>
+                                  </tr>
+                                                                  <tr>
+                                    <td>link</td>
+                                    <td>Link to page</td>
+                                  </tr>
+                                                                  <tr>
+                                    <td>comments</td>
+                                    <td>Comments list separated by \r\n or \n</td>
+                                  </tr>
+                                                                </tbody>
+                              </table>
+                            </div>
+                                                      <div id="type_6" style="display:none;">
+                              <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                  <th class="width-40">Parameters</th>
+                                  <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                  <tr>
+                                    <td>key</td>
+                                    <td>Your API key</td>
+                                  </tr>
+                                                                  <tr>
+                                    <td>action</td>
+                                    <td>add</td>
+                                  </tr>
+                                                                  <tr>
+                                    <td>service</td>
+                                    <td>Service ID</td>
+                                  </tr>
+                                                                  <tr>
+                                    <td>link</td>
+                                    <td>Link to page</td>
+                                  </tr>
+                                                                  <tr>
+                                    <td>quantity</td>
+                                    <td>Needed quantity</td>
+                                  </tr>
+                                                                  <tr>
+                                    <td>hashtag</td>
+                                    <td>Hashtag to scrape usernames from</td>
+                                  </tr>
+                                                                </tbody>
+                              </table>
+                            </div>
+                                                      <div id="type_15" style="display:none;">
+                              <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                  <th class="width-40">Parameters</th>
+                                  <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                  <tr>
+                                    <td>key</td>
+                                    <td>Your API key</td>
+                                  </tr>
+                                                                  <tr>
+                                    <td>action</td>
+                                    <td>add</td>
+                                  </tr>
+                                                                  <tr>
+                                    <td>service</td>
+                                    <td>Service ID</td>
+                                  </tr>
+                                                                  <tr>
+                                    <td>link</td>
+                                    <td>Link to page</td>
+                                  </tr>
+                                                                  <tr>
+                                    <td>quantity</td>
+                                    <td>Needed quantity</td>
+                                  </tr>
+                                                                  <tr>
+                                    <td>username</td>
+                                    <td>Username of the comment owner</td>
+                                  </tr>
+                                                                </tbody>
+                              </table>
+                            </div>
+                                                      <div id="type_18" style="display:none;">
+                              <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                  <th class="width-40">Parameters</th>
+                                  <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                  <tr>
+                                    <td>key</td>
+                                    <td>Your API key</td>
+                                  </tr>
+                                                                  <tr>
+                                    <td>action</td>
+                                    <td>add</td>
+                                  </tr>
+                                                                  <tr>
+                                    <td>service</td>
+                                    <td>Service ID</td>
+                                  </tr>
+                                                                  <tr>
+                                    <td>link</td>
+                                    <td>Link to page</td>
+                                  </tr>
+                                                                  <tr>
+                                    <td>username</td>
+                                    <td>Username</td>
+                                  </tr>
+                                                                  <tr>
+                                    <td>comments</td>
+                                    <td>Comments list separated by \r\n or \n</td>
+                                  </tr>
+                                                                </tbody>
+                              </table>
+                            </div>
+                                                              
+                        <p><strong>Example response</strong></p>
+            <pre>
+            {
+    "order": 23501
+}
+            </pre>
+                                              <div id="def_side_title">
+                            <div class="icon">
+                                <i class="far fa-code"></i>
+                            </div>
+                            <div class="name">
+                                Order status
+                            </div>
+                        </div>
+                                                  <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                              <th class="width-40">Parameters</th>
+                              <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                                          <tr>
+                                <td>key</td>
+                                <td>Your API key</td>
+                              </tr>
+                                                          <tr>
+                                <td>action</td>
+                                <td>status</td>
+                              </tr>
+                                                          <tr>
+                                <td>order</td>
+                                <td>Order ID</td>
+                              </tr>
+                                                        </tbody>
+                          </table>
+                                    
+                        <p><strong>Example response</strong></p>
+            <pre>
+            {
+    "charge": "0.27819",
+    "start_count": "3572",
+    "status": "Partial",
+    "remains": "157",
+    "currency": "USD"
+}
+            </pre>
+                                              <div id="def_side_title">
+                            <div class="icon">
+                                <i class="far fa-code"></i>
+                            </div>
+                            <div class="name">
+                                Multiple orders status
+                            </div>
+                        </div>
+                                                  <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                              <th class="width-40">Parameters</th>
+                              <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                                          <tr>
+                                <td>key</td>
+                                <td>Your API key</td>
+                              </tr>
+                                                          <tr>
+                                <td>action</td>
+                                <td>status</td>
+                              </tr>
+                                                          <tr>
+                                <td>orders</td>
+                                <td>Order IDs separated by comma</td>
+                              </tr>
+                                                        </tbody>
+                          </table>
+                                    
+                        <p><strong>Example response</strong></p>
+            <pre>
+            {
+    "1": {
+        "charge": "0.27819",
+        "start_count": "3572",
+        "status": "Partial",
+        "remains": "157",
+        "currency": "USD"
+    },
+    "10": {
+        "error": "Incorrect order ID"
+    },
+    "100": {
+        "charge": "1.44219",
+        "start_count": "234",
+        "status": "In progress",
+        "remains": "10",
+        "currency": "USD"
+    }
+}
+            </pre>
+                                              <div id="def_side_title">
+                            <div class="icon">
+                                <i class="far fa-code"></i>
+                            </div>
+                            <div class="name">
+                                Create refill
+                            </div>
+                        </div>
+                                                  <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                              <th class="width-40">Parameters</th>
+                              <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                                          <tr>
+                                <td>key</td>
+                                <td>Your API key</td>
+                              </tr>
+                                                          <tr>
+                                <td>action</td>
+                                <td>refill</td>
+                              </tr>
+                                                          <tr>
+                                <td>order</td>
+                                <td>Order ID</td>
+                              </tr>
+                                                        </tbody>
+                          </table>
+                                    
+                        <p><strong>Example response</strong></p>
+            <pre>
+            {
+    "refill": "1"
+}
+            </pre>
+                                              <div id="def_side_title">
+                            <div class="icon">
+                                <i class="far fa-code"></i>
+                            </div>
+                            <div class="name">
+                                Get refill status
+                            </div>
+                        </div>
+                                                  <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                              <th class="width-40">Parameters</th>
+                              <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                                          <tr>
+                                <td>key</td>
+                                <td>Your API key</td>
+                              </tr>
+                                                          <tr>
+                                <td>action</td>
+                                <td>refill_status</td>
+                              </tr>
+                                                          <tr>
+                                <td>refill</td>
+                                <td>Refill ID</td>
+                              </tr>
+                                                        </tbody>
+                          </table>
+                                    
+                        <p><strong>Example response</strong></p>
+            <pre>
+            {
+    "status": "Completed"
+}
+            </pre>
+                                              <div id="def_side_title">
+                            <div class="icon">
+                                <i class="far fa-code"></i>
+                            </div>
+                            <div class="name">
+                                User balance
+                            </div>
+                        </div>
+                                                  <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                              <th class="width-40">Parameters</th>
+                              <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                                          <tr>
+                                <td>key</td>
+                                <td>Your API key</td>
+                              </tr>
+                                                          <tr>
+                                <td>action</td>
+                                <td>balance</td>
+                              </tr>
+                                                        </tbody>
+                          </table>
+                                    
+                        <p><strong>Example response</strong></p>
+            <pre>
+            {
+    "balance": "100.84292",
+    "currency": "USD"
+}
+            </pre>
+                                          </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% include 'footer1.twig' %}

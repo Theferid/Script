@@ -1,0 +1,195 @@
+{% include 'header1.twig' %}
+
+
+
+   <!-- // page and other top info -->
+                    <section id="dashboard">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-12">
+                <div class="card card_v2">
+                    <div class="card-body">
+                        <div class="user_info">
+                            <div class="text_info">
+                                <h5>First Name</h5>
+                                <h4> {{ user["username"]  }}</h4>
+                            </div>
+                            <div class="icon_info">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+          
+            <div class="col-md-4 col-sm-6 col-12">
+                <div class="card card_v2">
+                    <div class="card-body">
+                        <div class="user_info">
+                            <div class="text_info">
+                                <h5>Last Name</h5>
+                                <h4>   {{ user["last_name"]  }}</h4>
+                            </div>
+                            <div class="icon_info">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 col-sm-6 col-12">
+                <div class="card card_v2">
+                    <div class="card-body">
+                        <div class="user_info">
+                            <div class="text_info">
+                                <h5>User Language</h5>
+                                <h4>en</h4>
+                            </div>
+                            <div class="icon_info">
+                                <i class="far fa-language"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            
+            <div class="col-md-4 col-sm-6 col-12">
+                <div class="card card_v2">
+                    <div class="card-body">
+                        <div class="user_info">
+                            <div class="text_info">
+                                <h5>Total Orders</h5>
+                                <h4>{{ totalorders}}</h4>
+                            </div>
+                            <div class="icon_info">
+                                <i class="far fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="col-md-4 col-sm-6 col-12">
+                <div class="card card_v2">
+                    <div class="card-body">
+                        <div class="user_info">
+                            <div class="text_info">
+                                <h5>Spend</h5>
+                                <h4>{{ currency["symbol"]  }} {{ (user["spent"]*currency["value"]) |round(7, 'floor') }}</h4>
+                            </div>
+                            <div class="icon_info">
+                                <i class="far fa-money-bill"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+            <div class="col-md-4 col-sm-6 col-12">
+                <div class="card card_v2">
+                    <div class="card-body">
+                        <div class="user_info">
+                            <div class="text_info">
+                                <h5>ID</h5>
+                                <h4>{{ user["client_id"]  }}</h4>
+                            </div>
+                            <div class="icon_info">
+                                <i class="fas fa-address-book"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            
+            <div class="col-md-4 col-sm-6 col-12">
+                <div class="card card_v2">
+                    <div class="card-body">
+                        <div class="user_info">
+                            <div class="text_info">
+                                <h5>Email</h5>
+                                <h4>{{ user['email'] }}</h4>
+                            </div>
+                            <div class="icon_info">
+                                <i class="far fa-envelope"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="col-md-4 col-sm-6 col-12">
+                <div class="card card_v2">
+                    <div class="card-body">
+                        <div class="user_info">
+                            <div class="text_info">
+                                <h5>Unread Tickets</h5>
+                                <h4>{% if ticketCount %} <span class="badge" style="background-color: #000000">{{ ticketCount }}</span></span>  {% endif %}</h4>
+                            </div>
+                            <div class="icon_info">
+                                <i class="far fa-ticket-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+            <div class="col-md-4 col-sm-6 col-12">
+                <div class="card card_v2">
+                    <div class="card-body">
+                        <div class="user_info">
+                            <div class="text_info">
+                                <h5>Skype user</h5>
+                                <h4>{{ user["telephone"]  }}</h4>
+                            </div>
+                            <div class="icon_info">
+                                <i class="fab fa-skype"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ac_benefits">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card_v2">
+                        <div class="card-body">
+                            <div class="acc_benefit_cont">
+                                <h3>Account Benefits</h3>
+                                <h4>Current Status :                                       <span id="accStats">  {% if user['spent'] >= 100000 %}
+                                                <h3>{{ lang['smmspot.neworder.status.1'] }}</h3>
+                                                {% elseif user['spent'] >= 8000 %}
+                                                <h3>{{ lang['smmspot.neworder.status.2'] }}</h3>
+                                                {% elseif user['spent'] >= 4000 %}
+                                                <h3>{{ lang['smmspot.neworder.status.3'] }} </h3>
+                                                {% else %}
+                                                <h3>{{ lang['smmspot.neworder.status.4'] }}   </h3>
+                                                {% endif %}</span>
+                                  </h4>
+                                <br>
+                                                                <p>🔥 24/7 Tickets Support</p>
+                                <p>🔥 Up to 10% Payments Bonus</p>
+                                                          </div>
+                           
+                        </div>
+                     <!--   <button type="button" class="btn_ac_benefit" data-bs-toggle="modal" data-bs-target="#GGstaticBackdrop">
+                            <i class="fas fa-caret-circle-right"></i>
+                        </button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% include 'footer1.twig' %}

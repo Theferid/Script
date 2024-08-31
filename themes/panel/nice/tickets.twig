@@ -1,0 +1,227 @@
+{% include 'header1.twig' %}
+
+
+
+<!-- // page and other top info -->
+                    <section id="tickets_page">
+    <div class="container-fluid">
+       <div class="row">
+            <div class="col-md-12">
+                <div class="card card_v2 mb-4">
+                    <div class="card-body">
+                       <div class="row mb-3">
+                            <div class="col-md-6">
+                                <div id="newOrderTabsWrap">
+                                    <ul class="nav nav-pills tab_btn_wrap mb-3" id="pills-tab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link active" id="pills-favorite-tab" data-bs-toggle="pill" data-bs-target="#pills-favorite" type="button" role="tab" aria-controls="pills-favorite" aria-selected="false"> <i class="fas fa-history"></i>
+                                            Ticket History </button>
+                                         </li>
+                                         <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="pills-favorite-tab" data-bs-toggle="modal" data-bs-target="#ticketModal"> 
+                                                <i class="fas fa-ticket-alt"></i>
+                                           New Ticket </button>
+                                         </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                              <form action="/tickets" method="get" id="history-search">
+                                <div class="input-group ticketPage">
+                                   <input type="text" name="search" class="form-control" value=""
+                                      placeholder="Search">
+                                   <span class="input-group-btn">
+                                   <button type="submit" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                   </span>
+                                </div>
+                             </form>
+                            </div>
+                       </div>
+                       <div class="row">
+                        <div class="col-md-12">
+                            <table class="table table-bordered table-striped" id="ticketTable">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Subject</th>
+                                        <th>Status</th>
+                                        <th class="nowrap">Last update</th>
+                                      </tr>
+                                </thead>
+                                <tbody>
+                                           <td colspan="9">
+              {% for ticket in ticketList %}
+                <tr>
+                  <td>{{ ticket['ticket_id'] }}</td>
+                  {% if ticket["support_new"] == 2 %}
+                    <td><a href="tickets/{{ ticket['ticket_id'] }}"><strong>{{ ticket['subject'] }}</strong></a></td>
+                  {% else %}
+                    <td><a href="tickets/{{ ticket['ticket_id'] }}">{{ ticket['subject'] }}</a></td>
+                  {% endif %}
+                  <td>{{ ticket['status'] }}</td>
+                  <td><span class="nowrap">{{ ticket['lastupdate_time'] }}</span></td>
+                </tr>
+              {% endfor %}
+</td>
+                                                                    </tbody>
+                            </table>
+                                                    </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </div>
+</section>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="ticketModal" tabindex="-1" aria-labelledby="ticketModalLabel" aria-hidden="true" data-bs-backdrop="static" >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ticketModalLabel">Create New Ticket</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+         {% if error %}
+                                <div class="alert alert-dismissible alert-danger ">
+                                  {{ errorText }}
+                                </div>
+                              {% elseif success %}
+                                <div class="alert alert-dismissible alert-success">
+                                  {{ successText }}
+                                </div>
+                              {% endif %}
+                              
+        <div class="modal-body">
+            <form method="post" action="" id="ticketsend">   
+                <div class="alert alert-dismissible alert-danger ticket-danger " style="display: none">
+                  <button type="button" class="close">×</button>
+                  <div></div>
+                </div>
+                <div class="siginInRow form-group">
+                 <label class="fla" for="subject">{{ lang["tickets.subject"] }}</label>
+                                        <div class="fg">
+                                           <!-- <div class="fg-icon"><i class="far fa-list"></i></div> -->
+                                            <select id="subject" name="subject" class="form-control fg-control" data-class="form-control fg-control">
+                                                                                             {% for subjects in orders %}
+                       <option value"{{ subjects['subject'] }}">{{ subjects['subject'] }}</option>
+                      {% endfor %}
+                                                                                          </select>
+                                        </div>
+                                    </div>
+                <!-- <span class="ticket-frm-body" style="display: block;">
+                  <div class="siginInRow form-group" id="order-group" style="display:none;">
+                    <label class="control-label">Order ID: [For multiple orders, please separate them using comma. (example: 10867110,10867210,10867500)] </label>
+                    <input type="text" class="form-control" id="orderid">
+  
+                    <label class="control-label" style="margin-top: 15px;">Request</label>
+                    <select class="form-control extraoption" style="margin-top: 15px;" id="want">
+                      <option value="Refill" selected="">Refill</option>
+                      <option value="Cancel">Cancel</option>
+                      <option value="Speed-up">Speed Up</option>
+                      <option value="Restart">Restart</option>
+                      <option value="Other">Other</option>
+                    </select>
+                    
+                    <span class="reason-box" style="display:none;">
+                      <label class="control-label" style="margin-top: 15px;">Reason*</label>
+                      <textarea type="text" class="form-control" id="reason" placeholder="Enter Cancel Reason"></textarea>
+                    </span>
+                  </div>
+                  <div id="payment-group" style="display: block;">
+                    <div class="siginInRow form-group">
+                      <label class="control-label">Payment</label>
+                      <select class="form-control extraoption" style="margin-top: 15px;" id="payment">
+                        <option value="Paypal" selected="">Paypal ( We don't accept )</option>
+                        <option value="Skrill">Skrill</option>
+                        <option value="Payoneer">Payoneer</option>
+                        <option value="JazzCash">JazzCash</option>
+                        <option value="Perfect-money">Perfect Money</option>
+                        <option value="Western-union">Western Union</option>
+                        <option value="BTC">BTC</option>
+                        <option value="Crypto-currency">Crypto Currency</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+                    <div class="siginInRow form-group">
+                      <label class="control-label">Payment ID</label>
+                      <input type="text" class="form-control" id="paymentid">
+                    </div>
+                    <div class="siginInRow form-group"> 
+                      <label class="control-label">Payment Email</label>
+                      <input type="email" class="form-control" id="paymentemail">
+                    </div>
+                    <div class="siginInRow form-group">
+                      <label class="control-label">Payment Amount</label>
+                      <input type="text" class="form-control" id="paymentamount">
+                    </div> 
+                  </div>
+                  <div id="api-group" style="display:none;">
+                    <div class="siginInRow form-group">
+                      <label class="control-label">Website Url</label>
+                      <input type="text" class="form-control" id="apiurl">
+                    </div>
+                    <div class="siginInRow form-group">
+                      <label class="control-label">Whatsapp/Skype/Calling Details</label>
+                      <input type="text" class="form-control" id="calldetail">
+                    </div>
+                    <div class="siginInRow form-group"> 
+                      <label class="control-label">Monthly sell</label>
+                      <input type="text" class="form-control" id="monthlysell">
+                    </div>
+                    <div class="siginInRow form-group">
+                      <label class="control-label">On which service Id do you need discount' [(example 123,453,999,998,1023,564)]</label>
+                      <input type="text" class="form-control" id="apidiscount">
+                    </div> 
+                  </div>
+                  <div id="bug-group" style="display:none;">
+                    <div class="siginInRow form-group">
+                      <label class="control-label">Bug In Website</label>
+                      <input type="text" class="form-control" id="websitebug">
+                    </div>
+                    <div class="siginInRow form-group">
+                      <label class="control-label">Bug In Services</label>
+                      <input type="text" class="form-control" id="servicebug">
+                    </div>
+                  </div>
+                  <div id="request-group" style="display:none;">
+                    <div class="siginInRow form-group">
+                      <label class="control-label">ADD THIS SERVICE</label>
+                      <input type="text" class="form-control" id="addservice">
+                    </div>
+                    <div class="siginInRow form-group">
+                      <label class="control-label">ADD THIS FEATURE</label>
+                      <input type="text" class="form-control" id="addfeature">
+                    </div>
+                    <div class="siginInRow form-group">
+                      <label class="control-label">ADD THIS PAYMENT METHOD</label>
+                      <input type="text" class="form-control" id="addpaymentmethod">
+                    </div>
+                  </div> -->
+                                  <div class="siginInRow form-group ticket-textarea">
+                    <label class="control-label">Message<span id="optional" style="display: none;"> (optional) </span></label>    
+                    <textarea class="form-control" rows="4" cols="50" id="message" name="message" style="min-height: 100px; display: block;">{{ data['message'] }}</textarea>
+                    
+
+                  </div>    
+               <!--   <div class="form-group">
+                    <label for="" class="control-label">Add Screenshot</label>
+                    <input type="file" id="photo" onchange="uploadImage()" class="form-control" name="files">
+                    <input type="text" id="imageUrl" style="display: none;" value="">
+                    
+                  </div> -->
+                
+                  <button type="submit" class="btn btn-primary d-blc w-100" id="sendTicket">Submit ticket</button>
+                </span>
+              </form>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+
+{% include 'footer1.twig' %}

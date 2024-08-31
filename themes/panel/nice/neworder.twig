@@ -1,0 +1,594 @@
+{% include 'header1.twig' %}
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- category Filters -->
+<div id="category_filter" class="mb-3">
+  <div class="container-fluid">
+     <div class="row">
+        <div class="col-md-12">
+           <div class="category_filter_wrap">
+              <div class="">
+                 <div class="">
+                                        <div class="filter_btn_wrap" id="categoryFIlterWraper">
+                            <a class="btn_filter" href="#" onclick="return false;" class="brand-category" data-id="everything">
+                           <i class="far fa-list-ul"></i>
+                        Everythings      
+                        </a>
+                      <a class="btn_filter" href="#" onclick="return false;" class="brand-category" data-id="instagram">  
+                       <i class="fab fa-instagram"></i>
+                       Instagram      
+                       </a>
+                           <a class="btn_filter" href="#" onclick="return false;" class="brand-category" data-id="facebook">
+                       <i class="fab fa-facebook"></i>
+                       Facebook
+                       </a>
+                         <a class="btn_filter" href="#" onclick="return false;" class="brand-category" data-id="youtube">
+                       <i class="fab fa-youtube"></i>
+                       youtube      
+                       </a>
+                       <a class="btn_filter" href="#" onclick="return false;" class="brand-category" data-id="twitter">
+                       <i class="fab fa-twitter"></i>
+                       Twitter      
+                       </a>
+                        <a class="btn_filter" href="#" onclick="return false;" class="brand-category" data-id="spotify">
+                       <i class="fab fa-spotify"></i>
+                       Spotify
+                       </a>
+                       <a class="btn_filter" href="#" onclick="return false;" class="brand-category" data-id="tiktok">
+                       <i class="fab fa-tiktok"></i>
+                       Tiktok      
+                       </a>
+                       <a class="btn_filter" href="#" onclick="return false;" class="brand-category" data-id="linkedin">
+                       <i class="fab fa-linkedin"></i>
+                       Linkedin      
+                       </a>
+                      <a class="btn_filter" href="#" onclick="return false;" class="brand-category" data-id="telegram">
+                       <i class="fab fa-telegram"></i>
+                       Telegram      
+                       </a>
+                      <a class="btn_filter" href="#" onclick="return false;" class="brand-category" data-id="discord">
+                       <i class="fab fa-discord"></i>
+                       Discord
+                       </a>
+                      <a class="btn_filter" href="#" onclick="return false;" class="brand-category" data-id="traffic">
+                        <i class="fas fa-globe-asia"></i>
+                       Website Traffic      
+                       </a>
+                       <a class="btn_filter" href="#" onclick="return false;" class="brand-category" data-id="everything">
+                        <i class="fas fa-arrow-right"></i>
+                       Others      
+                       </a>
+                      
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>
+<!-- //category Filters -->
+
+
+<!--
+<div class="filter_btn_wrap" id="category_filter_wrap">
+  <a class="btn_cat_filter" href="#" onclick="return false;" class="brand-category" data-id="youtube">
+<div class="icon Youtube" style="color: #f00;"><i class="fab fa-youtube"></i></div>
+<span class="ico-content">  {{lang['YOUTUBE']}}</span></a>
+<a class="btn_cat_filter" href="#" onclick="return false;" class="brand-category" data-id="instagram">
+<div class="icon Instagram" style="color: #ff0076;"><i class="fab fa-instagram"></i></div>
+<span class="ico-content"> {{lang['INSTAGRAM']}}</span></a>
+<a class="btn_cat_filter" href="#" onclick="return false;" class="brand-category" data-id="facebook">
+<div class="icon facebook" style="color: #0072ff;"><i class="fab fa-facebook-square"></i></div>
+<span class="ico-content">   {{lang['FACEBOOK']}}</span></a>
+<a class="btn_cat_filter" href="#" onclick="return false;" class="brand-category" data-id="tiktok">
+<div class="icon Tiktok" style="color: #fff;"><i class="fab fa-tiktok"></i></div>
+<span class="ico-content">  {{lang['TIKTOK']}}</span></a>
+<a class="btn_cat_filter" href="#" onclick="return false;" class="brand-category" data-id="twitter">
+<div class="icon Twitter" style="color: #4bbcff;"><i class="fab fa-twitter"></i></div>
+<span class="ico-content">  {{lang['TWITTER']}}</span></a>
+<a class="btn_cat_filter" href="#" onclick="return false;" class="brand-category" data-id="telegram">
+<div class="icon Telegram" style="color: #5ca3b9;"><i class="fab fa-telegram"></i></div>
+<span class="ico-content">  {{lang['TELEGRAM']}}</span></a>
+<a class="btn_cat_filter" href="#" onclick="return false;" class="brand-category" data-id="other">
+<div class="icon SEO Website" style="color: #0dcaf0;"><i class="fas fa-asterisk"></i></div>
+<span class="ico-content">  {{lang['OTHERS']}}</span></a>
+<a class="btn_cat_filter" href="#" onclick="return false;" class="brand-category" data-id="everything">
+<div class="icon SEO Website" style="color: #fcd703;"><i class="fas fa-list"></i></div>
+<span class="ico-content"> {{lang['EVERYTHING']}} </span></a> 
+<br>
+</div> -->
+	
+	
+
+                           <!-- New Orders Part -->
+<div class="def_wraper">
+  <div class="container-fluid">
+     <div class="row">
+        <div class="col-md-6">
+           <div class="card card_v2">
+              <div class="card-body" id="newOrderTabsWrap">
+                 <ul class="nav nav-pills tab_btn_wrap mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                       <button class="nav-link active" id="pills-order-tab" data-bs-toggle="pill" data-bs-target="#pills-order" type="button" role="tab" aria-controls="pills-order" aria-selected="true"> <i class="fas fa-shopping-cart"></i> New Order</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                       <button class="nav-link" id="pills-favorite-tab" data-bs-toggle="pill" data-bs-target="#pills-favorite" type="button" role="tab" aria-controls="pills-favorite" aria-selected="false"> <i class="fas fa-heart"></i> Favorites</button>
+                    </li>
+                    <!-- <li class="nav-item" role="presentation">
+                     <button class="nav-link" id="pills-search-tab" data-bs-toggle="pill" data-bs-target="#pills-search" type="button" role="tab" aria-controls="pills-search" aria-selected="true"> <i class="fas fa-search"></i> Search By Id</button>
+                  </li> -->
+                  <!-- <li class="nav-item" role="presentation">
+                     <button class="nav-link" id="pills-auto-tab" data-bs-toggle="pill" data-bs-target="#pills-auto" type="button" role="tab" aria-controls="pills-auto" aria-selected="false"> <i class="far fa-mp3-player"></i> <span class="hide_phone">Auto</span> Subscriptions</button>
+                  </li> -->
+                 </ul>
+                 <div class="tab-content tab_wrap" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-order" role="tabpanel" aria-labelledby="pills-order-tab">
+                        <div class="newordersr">
+                       <form  action="/" method="post" id="order-form">
+                                                                                    
+                                                                                     {% if error %}
+                            <div class="alert alert-dismissible alert-danger">
+                                {{ errorText }}
+                            </div>
+                            {% endif %}
+
+                            {% if data["order"]["success"] == 1 %}
+                            <div class="alert alert-success alert-dismissible" role="alert">
+                                <h4>{{lang['neworder.message.success']}}</h4>
+                                {{lang['neworder.success.id']}}: {{ data['order']['id'] }}<br>
+                                {{lang['neworder.success.service']}}: {{ data['order']['service'] }}
+                                <br>
+                                {{lang['neworder.success.link']}}: {{ data['order']['link'] }}<br>
+                                {{lang['neworder.success.quantity']}}: {{ data['order']['quantity'] }}<br>
+                                {{lang['neworder.success.link']}}: {{ data['order']['price'] }}<br>
+                                {{lang['neworder.success.balance']}}: {{ data['order']['balance'] }}<br>
+                            </div>
+                            {%endif%}
+
+                            {% if data["order"]["success"] == 2 %}
+                            <div class="alert alert-success alert-dismissible" role="alert">
+                                <h4>{{lang['neworder.message.success']}}</h4>
+                                {{lang['neworder.success.id']}}: {{ data['order']['id'] }}<br>
+                                {{lang['neworder.success.service']}}: {{ data['order']['service'] }}
+                                <br>
+                                {{lang['neworder.success.username']}}: {{ data['order']['link'] }}<br>
+                                {{lang['neworder.success.quantity']}}:
+                                {% if data['order']['min'] == data['order']['max'] %}
+                                {{ data['order']['max'] }}
+                                {% else %}
+                                {{ data['order']['min'] }} - {{ data['order']['max'] }}
+                                {% endif %}
+                                <br>
+                                {{lang['neworder.success.posts']}}:
+                                {% if 0 == data['order']['posts'] %}
+                                ∞
+                                {% else %}
+                                {{ data['order']['posts'] }}
+                                {% endif %}
+                                <br>
+                                {{lang['neworder.success.delay']}}:
+                                {{ data['order']['delay'] }}
+                                <br>
+                            </div>
+                            {% endif %}
+                                                                                    
+                                                                                                                   <div class="form-group">
+              <label for="orderform-category" class="control-label"><font color="">{{ lang["neworder.category"] }}</font></label>
+              <select class="form-control" id="neworder_category" name="categories">
+                {% for category in categories %}
+                    <option value="{{ category["category_id"] }}" {% if category["category_id"] == data['categories'] %} selected {% endif %} >{{ category["category_name"] }}</option>
+                {% endfor %}
+                </select>
+            </div>
+                       
+                       
+                       
+                   <div class="form-group">
+              <label for="orderform-service" class="control-label"><font color="">{{ lang["neworder.service"] }}</font></label>
+              <select class="form-control" id="neworder_services" name="services">
+
+              </select>
+            </div>
+
+            <div id="neworder_fields"></div>
+                
+            <div class="form-group" id="charge_div">
+              <label for="charge" class="control-label"><font color="">{{ lang["neworder.charge"] }}</font></label>
+              <input type="text" class="form-control" id="charge" readonly>
+            </div>
+
+
+
+                     {% if neworderTerms %}
+										  <div class="checkbox">
+											<label>
+											  <input type="checkbox" name="neworder_check">{{ lang['neworder.recheck'] }}
+											</label>
+										  </div>
+										  <br>
+										{% endif %}
+         
+                       <button type="submit" class="btn btn-primary d-block w-100">Submit</button>
+                       </form>
+                       </div>
+                    </div>
+
+                     <!-- Favorites Start -->
+                    <div class="tab-pane fade" id="pills-favorite" role="tabpanel" aria-labelledby="pills-favorite-tab">
+                        <div class="favoriler">
+                           <div class="alert alert-success"> Here will show your Favorites Services</div>
+                        </div>
+                    </div>
+                   <!-- Favorites Start -->
+                     <!-- Search By Id Start -->
+                    <div class="tab-pane fade" id="pills-search" role="tabpanel" aria-labelledby="pills-search-tab">
+                     <div class="input-group form-group">
+                        <input type="number" id="input_service" class="form-control" placeholder="Enter Service ID">
+                        <span class="input-group-btn search_byId">
+                          <button type="button" class="btn btn-primary search" onclick="searchID();"><i class="fas fa-search"></i></button>
+                          </span>
+                     </div>
+                     <small class="text-danger">You can search by services id from here, please check <a href="/services">Services</a> Page and then you can enter the services id here.</small>
+                     <div id="error_search">
+                     </div>
+                    </div>
+                     <!-- // Search By Id Start -->
+
+                       <!-- Search By Id Start -->
+                    <div class="tab-pane fade" id="pills-auto" role="tabpanel" aria-labelledby="pills-auto-tab">
+                     <div class="alert alert-success"> Auto Subscriptions will coming soon...</div>
+                     </div>
+                  <!-- // Search By Id Start -->
+
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div class="col-md-6">
+           <div class="card card_v2">
+              <div class="card-body" >
+
+              <div id="newOrderTabsWrap">
+               <ul class="nav nav-pills tab_btn_wrap mb-3 w-100 justify-content-between" id="pills-tab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                     <button class="nav-link active" id="pills-details-tab" data-bs-toggle="pill" data-bs-target="#pills-details" type="button" role="tab" aria-controls="pills-details" aria-selected="true"> <i class="far fa-question-circle"></i> Service details</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                     <form action="/orders" method="get" id="history-search">
+                        <div class="input-group">
+                          <input type="text" name="search" class="form-control" value=""
+                                 placeholder="Search For your orders" style="height: 38px;">
+                          <span class="input-group-btn">
+                            <button type="submit" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
+                          </span>
+                        </div>
+                      </form>
+                  </li>
+               </ul>
+              </div>
+              <div class="tab-content tab_wrap" id="pills-tabContent">
+                   <!-- Details Start -->
+                  <div class="tab-pane fade show active" id="pills-details" role="tabpanel" aria-labelledby="pills-details-tab">
+                     <div class="details_data">
+                        <div class="details_name">
+                           <h3>Example Link</h3>
+                        </div>
+                        <div class="item">
+                           <div class="icon icon_link">
+                              <i class="fas fa-link"></i>
+                           </div>
+                           <div class="item_content">
+                              <span data-id="serviceLink"></span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="details_data details_2">
+                        <div>
+                           <div class="details_name">
+                              <h3>Start Time</h3>
+                           </div>
+                           <div class="item">
+                              <div class="icon icon_start">
+                                 <i class="fas fa-tachometer-alt-fast"></i>
+                              </div>
+                              <div class="item_content">
+                                 <p><small data-id="serviceStart"></small>#</p>
+                              </div>
+                           </div>
+                        </div>
+                        <div>
+                           <div class="details_name">
+                              <h3>Speed</h3>
+                           </div>
+                           <div class="item">
+                              <div class="icon icon_speed">
+                                 <i class="fas fa-shipping-fast"></i>
+                              </div>
+                              <div class="item_content">
+                                 <p><small data-id="serviceSpeed">#</small></p>
+                              </div>
+                           </div>
+                        </div>
+                        <div>
+                           <div class="details_name">
+                              <h3>Guarantee</h3>
+                           </div>
+                           <div class="item">
+                              <div class="icon icon_refill">
+                                 <i class="fas fa-recycle"></i>
+                                 
+                              </div>
+                              <div class="item_content">
+                                 
+                                 <p><small data-id="serviceRefill">#</small></p>
+                              </div>
+                           </div>
+                        </div>
+                        <div>
+                           <div class="details_name">
+                              <h3>Avarage Time</h3>
+                           </div>
+                           <div class="item">
+                              <div class="icon icon_avg_time">
+                                 <i class="fas fa-alarm-clock"></i>
+                              </div>
+                              <div class="item_content">
+                                 <p><small id="average_time">Not enough data</small></p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                    <div>
+                     <div class="details_name">
+                        <h3>Description</h3>
+                     </div>
+                     <div class="descriptions_box">
+                       
+                      <div class="dp-service-text">
+                                <span id="description_new">...</span>
+                            </div>
+    
+                      </div>
+                     </div>
+                    </div>
+                  </div>
+                   <!-- //Details Start -->
+
+                  <!-- Real Time Update -->
+                   <div class="tab-pane fade" id="pills-update" role="tabpanel" aria-labelledby="pills-update-tab">
+                     <div class="alert alert-success"> Here will show real time update</div>
+                   </div>
+                  <!-- // Real Time Update -->
+              </div>
+                 
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>
+
+
+
+
+
+
+{% include 'footer1.twig' %}
+
+
+
+
+
+<script>
+    /*
+    $(document).on('change','#neworder_category',function(){
+
+           $('#neworder_fields').hide();
+
+           while (1){
+               if($('#description')){
+                   $('#description').attr('style','display:none');
+                   $('#neworder_fields').show();
+                   $('#description_new').html($('#service_description').html());
+                   console.log('x');
+                   break;
+               }else{
+                   console.log('y');
+                   continue;
+               }
+           }
+
+            document.getElementById('description').addEventListener()
+
+        })
+        */
+
+    $(document).on('DOMSubtreeModified','#neworder_fields',function(){
+        $('#description').hide();
+        $('#description_new').html($('#service_description').html());
+    })
+  /*  $(document).on('DOMSubtreeModified','#order_link',function(){
+        console.log('x');
+       // $('#order_link').hide();
+        //$('#order_link').html('<div class="fg"><div class="fg-icon"><i class="far fa-link"></i></div><input class="fg-control" name="OrderForm[link]" value="" type="text" id="field-orderform-fields-link"></div></div></div>');
+    }) */
+    
+
+    $(document).on('DOMSubtreeModified','#neworder_services',function(){
+        $('#s_name').html($('#neworder_services').find(":selected").html());
+    })
+
+
+
+
+function ikon(opt) {
+var ikon = "";
+if (opt.indexOf("Instagram") >= 0) {
+ikon = '<img src="https://cdn.mypanel.link/si46tw/akj2dlg0893li2ic.png" alt="" class="img-responsive btn-group-vertical" style="max-width: calc(1em + 10px); max-height: calc(1em + 10px); margin-right: 10px;">';
+  
+} else if (opt.indexOf("Facebook") >= 0) {
+ikon = '<img src="https://cdn.mypanel.link/si46tw/ni21xuu3n4a6r0if.png" alt="" class="img-responsive btn-group-vertical" style="max-width: calc(1em + 10px); max-height: calc(1em + 10px); margin-right: 10px;">';
+  
+} else if (opt.indexOf("YouTube") >= 0) {
+ikon = '<img src="https://cdn.mypanel.link/si46tw/3hxfpcmr6odceun7.png" alt="" [ Refill Guarantee ]" class="img-responsive btn-group-vertical" style="max-width: calc(1em + 10px); max-height: calc(1em + 10px); margin-right: 10px;">';
+  
+} else if (opt.indexOf("Twitter") >= 0) {
+ikon = '<img src="https://cdn.mypanel.link/si46tw/u658e5mcklnydog5.png" alt="" class="img-responsive btn-group-vertical" style="max-width: calc(1em + 10px); max-height: calc(1em + 10px); margin-right: 10px;">';
+    
+} else if (opt.indexOf("Telegram") >= 0) {
+ikon = '<img src="https://cdn.mypanel.link/si46tw/rhacs5djntmcr17b.png" alt="" class="img-responsive btn-group-vertical" style="max-width: calc(1em + 10px); max-height: calc(1em + 10px); margin-right: 10px;">';
+  
+} else if (opt.indexOf("Tik") >= 0) {
+ikon = '<img src="https://cdn.mypanel.link/si46tw/04u3rorjptffqax9.png" alt="" class="img-responsive btn-group-vertical" style="max-width: calc(1em + 10px); max-height: calc(1em + 10px); margin-right: 10px;">';
+  
+} else {
+ikon = '<img src="/assets/smmspot/assets/images/icons8-circled-z-24.png" alt="" class="img-responsive btn-group-vertical" style="max-width: calc(1em + 10px); max-height: calc(1em + 10px); margin-right: 10px;">';
+}
+return ikon;
+}
+
+  
+  
+  var categories = {{categories|json_encode()}};
+  
+  
+  
+  
+setTimeout(function () {
+                $('#neworder_services').trigger('change');
+                $('.btn_filter').on('click', function() {
+                  
+                    category = $(this).data('id');
+                    
+                     var category_2 = null;
+                    if(category == 'instagram'){
+                            category_2 = "انستغرام";
+                    }
+                    if(category == 'facebook'){
+                            category_2 = "فايسبوك";
+                    }
+                    if(category == 'youtube'){
+                            category_2 = "يوتيوب";
+                    }
+                    if(category == 'twitter'){
+                            category_2 = "تويتر";
+                    }
+                    if(category == 'tiktok'){
+                            category_2 = "تيك توك";
+                    }
+                    if(category == 'telegram'){
+                            category_2 = "تلغرام";
+                    }
+                    
+                    
+                    $('#neworder_category').html("");
+                    categories.forEach(element => {
+                        if (category == "everything") {
+                            $('#neworder_category').append("<option value='" + element.category_id + "'>" + element.category_name + "</option>");
+                        } else if (category == "other") {
+                            if (!element.category_name.toLowerCase().includes("instagram") &&
+                                !element.category_name.toLowerCase().includes("facebook") &&
+                                !element.category_name.toLowerCase().includes("youtube") &&
+                                !element.category_name.toLowerCase().includes("twitter") &&
+                                !element.category_name.toLowerCase().includes("tiktok") &&
+                                !element.category_name.toLowerCase().includes("telegram")) {
+                                $('#neworder_category').append("<option value='" + element.category_id + "'>" + element.category_name + "</option>");
+                            }
+                        } else if (element.category_name.toLowerCase().includes(category) || element.category_name.toLowerCase().includes(category_2)) {
+                            $('#neworder_category').append("<option value='" + element.category_id + "'>" + element.category_name + "</option>");
+                        }
+                    });
+                    $('#neworder_category').trigger('change');
+                    setTimeout(function(){
+                        $(".smmspot-sb-dd-item").each(function() {
+                            var ico = ikon($(this).text());
+                            $(this).html(ico + $(this).text() );
+                            console.log($(this).text());
+                        });
+                    }, 500);
+                    setTimeout(function(){
+                        $(".smmspot-sb-selected").each(function() {
+                            var ico = ikon($(this).text());
+                            $(this).html(ico + $(this).text() );
+                            console.log($(this).text());
+                        });
+                    }, 500);
+                });
+            
+        }, 400);
+        
+</script>
+<script>
+    function updateDetail(e) {
+        var r = $("#neworder_services").find(":selected").attr("data-array"),
+            n = serviceArray.services[r].type,
+            a = serviceArray.services[r].max,
+            i = serviceArray.services[r].min,
+            t = serviceArray.services[r].link_type,
+            l = serviceArray.services[r].dripfeed;
+        t = 1 == t ? "link_url" : "link_username";
+        updateDescription(e);
+        updateDescription2(e),
+            1 == n
+                ? ($("#order_link > label").text(generalList.label_list[t]),
+                    $("#order_link").removeClass("hidden"),
+                    $("#order_quantity").removeClass("hidden"),
+                    $(".min-max")
+                        .removeClass("hidden")
+                        .text("Min: " + i + " Max:" + a),
+                    $("#neworder_quantity").attr("disabled", !1))
+                : 2 == n
+                ? ($("#order_link > label").text(generalList.label_list[t]), $("#order_link").removeClass("hidden"))
+                : 3 == n
+                    ? ($("#order_link > label").text(generalList.label_list[t]),
+                        $("#order_link").removeClass("hidden"),
+                        $("#order_quantity").removeClass("hidden"),
+                        $("#order_comment").removeClass("hidden"),
+                        $("#neworder_quantity").attr("disabled", !0))
+                    : 4 == n
+                        ? ($("#order_link > label").text(generalList.label_list[t]), $("#order_link").removeClass("hidden"), $("#order_comment").removeClass("hidden"))
+                        : 5 == n
+                            ? ($("#order_link > label").text(generalList.label_list[t]),
+                                $("#order_link").removeClass("hidden"),
+                                $("#order_username").removeClass("hidden"),
+                                $("#order_quantity").removeClass("hidden"),
+                                $("#neworder_quantity").attr("disabled", !1))
+                            : 11 == n || 12 == n
+                                ? ($("#order_username").removeClass("hidden"),
+                                    $("#order_auto").removeClass("hidden"),
+                                    $("#order_min > .min-max")
+                                        .removeClass("hidden")
+                                        .text("Min: " + i + " Max:" + a))
+                                : (14 != n && 15 != n) || $("#order_username").removeClass("hidden"),
+        l && $("#dripfeed").removeClass("hidden"),
+            $(".datetime")
+                .datepicker({ format: "dd/mm/yyyy", language: "tr", startDate: new Date() })
+                .on("change", function (e) {
+                    $(".datetime").datepicker("hide");
+                }),
+            $("#clearExpiry").click(function () {
+                $("#expiryDate").val("");
+            }),
+        getSession("link") && $("#field-orderform-fields-link").val(getSession("link")),
+        getSession("quantity") && $("#neworder_quantity").val(getSession("quantity")),
+        getSession("username") && $('[name="username"]').val(getSession("username")),
+        getSession("posts") && $("#field-orderform-fields-posts").val(getSession("posts")),
+        getSession("expiry") && $("#expiryDate").val(getSession("expiry")),
+        getSession("min") && $('[name="min"]').val(getSession("min")),
+        getSession("max") && $('[name="max"]').val(getSession("max")),
+        getSession("delay") && $('[name="delay"]').val(getSession("delay")),
+        getSession("comments") && $("#neworder_comment").val(getSession("comments").replace(new RegExp("<br>", "g"), "\r\n")),
+            updateRate(e);
+    }
+</script>

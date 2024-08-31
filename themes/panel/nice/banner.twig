@@ -1,0 +1,178 @@
+<style>
+    .section-title {
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.5em;
+    line-height: 1.4;
+}
+
+#reseller-banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 85%;
+    height: 80px;
+    padding: 0 20px 0 20px;
+    border-radius: 10px;
+    color: #fff;
+    background: linear-gradient(110deg,#ea037f,#0587f7);
+    text-decoration: none;
+    box-shadow: 0 0 15px 0 rgb(0 0 0 / 10%);
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.section-title {
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.5em;
+    line-height: 1.4;
+}
+
+#reseller-banner:before {
+    background-image: url(/images/reseller-banner-bg-md.webp);
+    background-position: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0.2;
+}
+
+#reseller-banner .title {
+    font-size: 21px;
+    position: relative;
+    line-height: 23px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    margin-bottom: unset;
+    margin-top: unset;
+    font-family: sans-serif !important;
+    width:80%;
+    //text-shadow: 2px 2px #000;
+    //color:yellow;
+}
+
+#reseller-banner .arrow {
+    right: 30px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 150px;
+    height: 32px;
+    border-radius: 16px;
+    color: #fff;
+    background-color: #e81586;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: .88px;
+}
+
+
+#reseller-banner .arrow .icon {
+    display: none;
+}
+
+
+@media only screen and (max-width: 540px){
+    
+    #reseller-banner .title{
+        width:85%;
+    }
+#reseller-banner .arrow {
+    right: 20px;
+    width: 32px;
+}
+
+#reseller-banner .arrow .icon {
+    display: block;
+}
+
+#reseller-banner .arrow .arrow-text {
+    display: none;
+}
+
+}
+#reseller-banner .title br {
+    display: none !important;
+}
+
+
+.fade-in {
+  animation-name: FadeIn;
+  animation-duration: 1.5s;
+  transition-timing-function: linear;
+}
+
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+</style>
+
+{% if settings['panner_confirmation']  ==  1 %} 
+<div class="section-title style-gradient fade-in">
+    <a id="reseller-banner" href="{{ settings['banner_url'] }}" target="_blank">
+     <h4 class="title">  {% if user['lang'] == "ar" %} {{ settings['banner_text_ar'] }} {% else %}  {{ settings['banner_text_en'] }} {% endif %}</h4>
+    <div class="arrow">
+    <span class="arrow-text d-md-inline-block mr-10">DETAILS</span>
+    <i class="icon fa fa-arrow-right" aria-hidden="true"></i>
+    </div>
+    </a>
+    </div>
+    {% endif %}

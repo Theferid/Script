@@ -1,0 +1,938 @@
+
+{% include 'header.twig' %}
+
+
+
+
+		                  <main class="noAuths">
+		      <!-- BANNER -->
+<section id="banner">
+    <div class="container">
+        <div class="row d-flex align-items-center">
+            <div class="col-md-6 col-sm-6 col-12">
+                <div class="banner_title">
+                    <h5 class="smallest_title">#1 SMM Panel in world</h5>
+                    <h1>
+                        We are best <br>
+                        <span class="text__primary">Social Media Services</span> <br>
+                        Main Provider.
+                    </h1>
+                    <p>
+                        <b>{{ site["site_name"] }}</b> is a <b>Social Media Marketing tools</b> for you. The use of social media platforms such as <strong>Instagram, Facebook, Twitter, Youtube </strong> and many more to promote yourself or your company.</p> 
+                    <div class="banner_btn">
+                        <a href="/signup" class="btn btn__home btn__fill btn_bob">Get Started</a>
+                        <a href="/signup" class="btn btn__home btn__nofill btn_bob">Sign up Now</a>
+                    </div>
+                    <div class="boost__media">
+                        <p>Boost your social media account</p>
+                        <div class="media_icons">
+                            <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1661831992/honestsmm-assets/Facebook_1_u7oiyu.png" class="banner_media" alt="">
+                            <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1661831992/honestsmm-assets/Tikto_1_j8sgwb.png" class="banner_media" alt="">
+                            <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1661831992/honestsmm-assets/Twitter_1_jb2obi.png" class="banner_media" alt="">
+                            <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1661831992/honestsmm-assets/Youtube_1_azpxhv.png" class="banner_media" alt="">
+                            <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1661831992/honestsmm-assets/Discord_1_mq4oim.png" class="banner_media" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1 col-sm-0"></div>
+            <div class="col-md-5 col-sm-6 col-12">
+               <div class="login__box">
+                <h2 class="text-center text-bold">Sign In</h2>
+                
+                {% if errorText %}
+        <div class="alert alert-dismissible alert-danger">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          {{ errorText }}
+        </div>
+      {% endif %}
+      {% if successText %}
+        <div class="alert alert-dismissible alert-success">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          {{ successText }}
+        </div>
+      {% endif %}
+                
+                <form  method="post" action="/">
+                  
+                                    
+                  <div class="form_group mb-2">
+                    <div class="form_icon">
+                        <i class="fas fa-user-astronaut"></i>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Username" name="username">
+                </div>
+
+                <div class="form_group mb-2">
+                  <div class="form_icon">
+                      <i class="fas fa-lock"></i>
+                  </div>
+                  <input type="password" class="form-control" placeholder="Password" name="password">
+              </div>
+
+
+              <div class="form-group">
+                <label for="remember">
+                  <input type="checkbox" id="remember" name="remember" value="1" checked> Remember me
+                </label>
+              </div>
+              
+              
+              <button class="btn btn__home btn__fill w-100 btn_login mt-3">Sign in</button>
+                           <p class="p-0 m-0 text-center">
+              <a href="/resetpassword" title="Forgot  Password">Forgot Password?</a>
+             </p>
+             <p class="p-0 m-0 text-center">
+                Don't have an account? <a href="/signup">Sign up now</a>
+             </p>
+                              </form>
+               </div>
+            </div>
+        </div>
+    </div>
+  </section>
+<!-- ## Banner -->
+
+<!-- Counter Sections -->
+<section id="counter">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-6">
+                <div class="counter_item">
+                    <div class="counter_icon">
+                        <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1661848235/honestsmm-assets/lykarx7irsywnnxn_vjltow.png" class="item_cart img-fluid" alt="">
+                    </div>
+                    <div class="counter_count">
+                        <h4>2604035</h4>
+                        <h5>Total Orders</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-6">
+                <div class="counter_item">
+                    <div class="counter_icon">
+                        <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1661848235/honestsmm-assets/b7p4tncmwtha2j2f_rvq7zn.png" class="item_money img-fluid" alt="">
+                    </div>
+                    <div class="counter_count">
+                        <h4>$0.001/1K</h4>
+                        <h5>Price Starting</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-6">
+                <div class="counter_item">
+                    <div class="counter_icon">
+                        <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1661848235/honestsmm-assets/4db1pl22tld9pdkp_j8fknb.png" class="item_txt img-fluid" alt="">
+                    </div>
+                    <div class="counter_count">
+                        <h4>24/7</h4>
+                        <h5>Fastest Support</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-6">
+                <div class="counter_item">
+                    <div class="counter_icon">
+                        <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1661848235/honestsmm-assets/8t1s315exqf0cy5p_u9xzkk.png" class="item_api img-fluid" alt="">
+                    </div>
+                    <div class="counter_count">
+                        <h4>6972</h4>
+                        <h5>Api User</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ### Counter Sections -->
+<!-- Cheap and Best Section -->
+<section id="cheapBest">
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-between">
+            <div class="col-md-6">
+                <div class="cheap_title">
+                    <h2>
+                        Cheapest & Best SMM Panel for <span class="text__primary">Instagram, youtube , tiktok</span> <br> and many more.
+                    </h2>
+                    <p>
+                        You need an SMM Panel to boost your Facebook, Instagram, Twitter, YouTube, and other social profiles!
+                        {{ site["site_name"] }} is the right place for you! We will help you reach your goals faster than ever before with our Cheapest SMM Reseller Panel.
+                    </p>
+                </div>
+                <div class="more_cheap">
+                    <div class="more_item">
+                        <div class="icon">
+                            <i class="fas fa-shield-check"></i>
+                        </div>
+                        <h4>Fastest Support smm panel</h4>
+                    </div>
+                    <div class="more_item">
+                        <div class="icon">
+                            <i class="fas fa-shield-check"></i>
+                        </div>
+                        <h4>Lowest Prices smm services</h4>
+                    </div>
+                    <div class="more_item">
+                        <div class="icon">
+                            <i class="fas fa-shield-check"></i>
+                        </div>
+                        <h4>Tursted smm services provider</h4>
+                    </div>
+                    <div class="more_item">
+                        <div class="icon">
+                            <i class="fas fa-shield-check"></i>
+                        </div>
+                        <h4>Best quality smm services</h4>
+                    </div>
+                </div>
+                <div class="banner_btn">
+                    <a href="/services" class="btn btn__home btn__fill btn_bob">Our Services</a>
+                    <a href="/signup" class="btn btn__home btn__nofill btn_bob">Register Now</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="cheapBest_img">
+                    <lottie-player src="https://res.cloudinary.com/honestsmm/raw/upload/v1662512251/honestsmm-assets/104775-sales-sky-rocket_xjjjlq.json" background="transparent" speed="1" loop="" autoplay=""></lottie-player>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ## Cheap and Best Section -->
+
+<!-- Why Choose Us -->
+<section id="whyChooseUs">
+    <div class="container">
+        <div class="row d-flex align-items-center">
+            <div class="col-lg-6">
+                <div class="sec__title__wrap">
+                    <h4 class="sec__title__small">Why Choose {{ site["site_name"] }}?</h4>
+                    <h2 class="sec__title">
+                        {{ site["site_name"] }} Is all in one <br> <strong class="text__primary">social media marketing</strong> tools for <br> Increase growth of your social media account.
+                    </h2>
+                    <p class="sec__dsc">
+                        We provide the maximum <strong>lower-priced SMM Services</strong> amongst our competitors. Our services are the most cheapest however we do not compromise on the quality. 
+                        <br>
+                        If you are looking for the most <strong> lower priced Social Media Marketing Services</strong>, then <strong>{{ site["site_name"] }}</strong> is the precise desire for you. 
+                        <br>
+                        Please take a look at our <strong>all cheapest and best SMM Services</strong>
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="box_wraper">
+                    <div class="box_item_wrap box_1">
+                        <div class="box_icon">
+                            <i class="fas fa-sack-dollar"></i>
+                        </div>
+                        <div class="box_cont">
+                            <h4>Unbelievable Prices</h4>
+                            <p>Our prices most reasonable in the market, starting from at 0.10$.</p>
+                        </div>
+                    </div>
+                    <div class="box_item_wrap box_2">
+                        <div class="box_icon">
+                            <i class="far fa-alarm-clock"></i>
+                        </div>
+                        <div class="box_cont">
+                            <h4>Delivering Within a Minutes</h4>
+                            <p>Our delivery is automated, and it takes minutes if not seconds to fulfil orders.</p>
+                        </div>
+                    </div>
+                    <div class="box_item_wrap box_3">
+                        <div class="box_icon">
+                            <i class="fas fa-users-class"></i>
+                        </div>
+                        <div class="box_cont">
+                            <h4>Friendly Dashboard</h4>
+                            <p>{{ site["site_name"] }} team update dashboard regularly with the best user-friendly features.</p>
+                        </div>
+                    </div>
+                    <div class="box_item_wrap box_4">
+                        <div class="box_icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="box_cont">
+                            <h4>Fastest Support 24/7</h4>
+                            <p>We are proud to have the most reliable or fastest support in the {{ site["site_name"] }}, replying to your tickets 24/7.</p>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ## Why Choose Us -->
+
+
+<!-- Services Section -->
+<section id="services_area">
+    <div class="container">
+        <div class="row">
+           <div class="col-lg-12">
+                <div class="top__title">
+                    <h5>Our Services</h5>
+                    <h2>Best Smm Services Providers For all platforms</h2>
+                    <p>
+                        We are active for support for 24 hours a day and seven times a week with all of your demands and services around the day. Don't go anywhere else. We are here ready to serve you and help you with all of your SMM needs.
+Users or Clients with SMM orders and in need of <strong>CHEAP SMM services</strong> are more then welcome in our <strong>SMM PANEL</strong>.
+                    </p>
+                </div>
+           </div>
+           <div class="col-lg-12">
+                <div id="services__wraper">
+                    <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+                        <!-- Button for facebook -->
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+                            <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1662525838/honestsmm-assets/FACEBOOK_4_fh9juc.png" class="img-fluid" alt="">
+                          </button>
+                        </li>
+                        <!-- Button for Instagram -->
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+                            <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1662525838/honestsmm-assets/INSTA_1_pyhboj.png" alt="" class="img-fluid">
+                          </button>
+                        </li>
+                        <!-- Button for Twitter -->
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
+                            <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1662525838/honestsmm-assets/TWITTER_3_kwe1au.png" alt="" class="img-fluid">
+                          </button>
+                        </li>
+                          <!-- Button for Youtube -->
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
+                            <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1662525838/honestsmm-assets/YOUTUBE_4_sfsmhr.png" alt="" class="img-fluid">
+                          </button>
+                        </li>
+                          <!-- Button for Tiktok -->
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="pills-tiktok-tab" data-bs-toggle="pill" data-bs-target="#pills-tiktok" type="button" role="tab" aria-controls="pills-tiktok" aria-selected="false">
+                            <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1662525838/honestsmm-assets/TIKTOK_3_ivobcx.png" alt="" class="img-fluid">
+                          </button>
+                        </li>
+                      </ul>
+                      <div class="tab-content" id="pills-tabContent">
+
+                        <!-- Facebook Content -->
+                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                            <div class="tab_content_wraper">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="tab__img">
+                                            <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1662530773/honestsmm-assets/tab_2_nlqna8.png" alt="" class="img-fluid">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="tab__content">
+                                            <h3>Best Smm Panel For Facebook</h3>
+                                            <p>
+                                                Here at {{ site["site_name"] }} can promote you to different social media entries to bring in a broader audience to your customer base, when we sell a <strong> social media reseller panel</strong>, we guarantee that you will see and increase in your client base. It also means that you can have plenty of help to market your products or services using these media.
+                                            </p>
+                                            <p>
+                                                ✅ <strong>Facebook Smm Panel</strong> <br>
+                                                ✅ <strong>Cheapest Facebook Follower Panel</strong> <br>
+                                                ✅ <strong>Facebook Provider Panel</strong> <br>
+                                                ✅ <strong>Cheap Facebook Services</strong> <br>
+                                                ✅ <strong>Facebook Likes Provider</strong> <br>
+                                                ✅ <strong>Facebook Live stream views</strong> <br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //Facebook Content -->
+                        
+
+                        <!-- Instagram Content -->
+                        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                            <div class="tab_content_wraper">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="tab__img">
+                                            <img src="https://res.cloudinary.com/honestsmm/image/upload/v1662530773/honestsmm-assets/tab_wcxcms.png" alt="" class="img-fluid">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                      
+                                        <div class="tab__content">
+                                            <h3>Cheapest Instagram smm Panel</h3>
+                                            <p>
+                                                <strong>{{ site["site_name"] }} Social media marketing services is best</strong> for instagram services. {{ site["site_name"] }} always provide trusted instagram services than other website.
+                                                we always follow client sataisfaction first, all instagram services automatically work with our server.
+                                            </p>
+                                            <p>
+                                                ✅ <strong>Best Instagram Smm Panel</strong> <br>
+                                                ✅ <strong>Lowest price instagram Follower Panel</strong> <br>
+                                                ✅ <strong>Instagram Comments cheapest services</strong> <br>
+                                                ✅ <strong>Instagram fast follower services</strong> <br>
+                                                ✅ <strong>Cheap instagram services</strong> <br>
+                                                ✅ <strong>Instagram Services Provider</strong> <br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //Instagram Content -->
+                        
+                        <!-- Twitter content -->
+                        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                            <div class="tab_content_wraper">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="tab__img">
+                                            <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1662530773/honestsmm-assets/tab_3_ofyl61.png" alt="" class="img-fluid">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                      
+                                        <div class="tab__content">
+                                            <h3>Best smm Panel for twitter</h3>
+                                            <p>
+                                                {{ site["site_name"] }} provides cheapest twitter services as per our customer demand, Twitter follower and twitter likes is always top rated services in our panel 
+                                            </p>
+                                            <p>
+                                                ✅ <strong>Best Twitter Smm Panel</strong> <br>
+                                                ✅ <strong>Lowest price Twitter Follower Panel</strong> <br>
+                                                ✅ <strong>Twitter Comments cheapest services</strong> <br>
+                                                ✅ <strong>Twitter fast follower services</strong> <br>
+                                                ✅ <strong>Cheap Twitter services</strong> <br>
+                                                ✅ <strong>Twitter Services Provider</strong> <br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //Twitter content -->
+
+                        <!-- Youtube Content -->
+                        <div class="tab-pane fade" id="pills-youtube" role="tabpanel" aria-labelledby="pills-youtube-tab" tabindex="0">
+                            <div class="tab_content_wraper">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="tab__img">
+                                            <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1662530773/honestsmm-assets/tab_4_irl242.png" alt="" class="img-fluid">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                      
+                                        <div class="tab__content">
+                                            <h3>Best youtube services smm Panel</h3>
+                                            <p>
+                                              {{ site["site_name"] }} have most of the fastest youtube services.Our youtube subscriber services is bestselling services. we also sell youtube watchtime services, youtube likes and comments.
+                                            </p>
+                                            <p>
+                                                ✅ <strong>Best Youtube Smm Panel</strong> <br>
+                                                ✅ <strong>Lowest price Youtube Subscriber Panel</strong> <br>
+                                                ✅ <strong>Youtube Comments cheapest services</strong> <br>
+                                                ✅ <strong>Youtube fast like services</strong> <br>
+                                                ✅ <strong>Cheapest yotube watchtime services</strong> <br>
+                                                ✅ <strong>Youtube Monitization Packages</strong> <br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // Youtube Content -->
+                        
+                        <!-- Tiktok Content -->
+                        <div class="tab-pane fade" id="pills-tiktok" role="tabpanel" aria-labelledby="pills-tiktok-tab" tabindex="0">
+                            <div class="tab_content_wraper">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="tab__img">
+                                            <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1662530773/honestsmm-assets/tab_5_goh2mx.png" alt="" class="img-fluid">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                      
+                                        <div class="tab__content">
+                                            <h3>Best Tiktok smm panel</h3>
+                                            <p>
+                                                {{ site["site_name"] }} provides all type of tiktok services for you, please check our services page for prices and more informations about <strong>tiktok cheapest smm services</strong>.
+                                            </p>
+                                            <p>
+                                                ✅ <strong>Best Tiktok Smm Panel</strong> <br>
+                                                ✅ <strong>Lowest price Tiktok Follower Panel</strong> <br>
+                                                ✅ <strong>Tiktok cheapest services</strong> <br>
+                                                ✅ <strong>Tiktok Real fast follower services</strong> <br>
+                                                ✅ <strong>Cheap tiktok services</strong> <br>
+                                                ✅ <strong>Tiktok Services Provider</strong> <br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //Tiktok Content -->
+                        
+                      </div>
+                </div>
+           </div>
+        </div>
+    </div>
+</section>
+<!-- ##Services Section -->
+
+<!-- Frequetly Asked Questions -->
+<section id="faq">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="top__title">
+                    <h5>FAQ's</h5>
+                    <h2>Frequetly Asked Questions</h2>
+                    <p>
+                      We have writen below few question and answare, sometimes our customer ask to us few common question please read carefully and understand what we means.
+                    </p>
+                </div> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="faqAcc accordion accordion-flush" id="accordionFlushExample">
+                    <!-- ITEM 1 -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                          What is an SMM panel?
+                        </button>
+                      </h2>
+                      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                          SMM Panel is a social media marketing Website . which is provide you instagram followers, likes and other social media services in just few dollars. smm panel make your profiles high quality with enogh likes and followers.
+                        </div>
+                      </div>
+                    </div>
+                    <!-- ITEM 2-->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                          What is an SMM Service?
+                        </button>
+                      </h2>
+                      <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                          SMM Service is called social Media Marketing Services, in Smm websites you can see Lot of Social Media Services For example instagram followers likes and many more, in very low price. and quality of followers and likes is too Best. which is help in your business and profiles quality.
+                        </div>
+                      </div>
+                    </div>
+
+                     <!-- ITEM 3 -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                          Why Choose <strong>{{ site["site_name"] }}</strong>?
+                        </button>
+                      </h2>
+                      <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                          In <strong>{{ site["site_name"] }}</strong> You will get 24/7 Support. and all services in low price. with quality.<strong>{{ site["site_name"] }}</strong>  is updating services daily For clients satisfaction. so you will get always positive results from us.
+                        </div>
+                      </div>
+                    </div>
+
+                     <!-- ITEM 4 -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse4" aria-expanded="false" aria-controls="flush-collapse4">
+                          which is the fastest growing smm panel ?
+                        </button>
+                      </h2>
+                      <div id="flush-collapse4" class="accordion-collapse collapse" aria-labelledby="flush-heading4" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                          <strong>{{ site["site_name"] }}</strong> is trust of 6972 clients, and complete 1.5 Million orders in 2020, <strong>{{ site["site_name"] }}</strong> services too fastest in whole smm community.
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- ITEM 5 -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse5" aria-expanded="false" aria-controls="flush-collapse5">
+                          Which is best smm panel for instagram ?
+                        </button>
+                      </h2>
+                      <div id="flush-collapse5" class="accordion-collapse collapse" aria-labelledby="flush-heading5" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                          <strong>{{ site["site_name"] }}</strong> is best instagram smm panel Because in  <strong>{{ site["site_name"] }}</strong> instagram services Just start from 0.002$/K, And all services is high quality. So you can use services without worry.
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="faqAcc accordion accordion-flush" id="accordionFlushedExample">
+                    <!-- ITEM 6 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-heading6">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse6" aria-expanded="false" aria-controls="flush-collapse6">
+                      What kinds of SMM services can I find here?
+                    </button>
+                  </h2>
+                  <div id="flush-collapse6" class="accordion-collapse collapse" aria-labelledby="flush-heading6" data-bs-parent="#accordionFlushedExample">
+                    <div class="accordion-body">
+                      You can buy different types of SMM services: Get Social media account followers, likes, views, etc. Also you can get Youtube channel Monitization services form us.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ITEM 7 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-heading7">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse7" aria-expanded="false" aria-controls="flush-collapse7">
+                      Is it safe to use your SMM services?
+                    </button>
+                  </h2>
+                  <div id="flush-collapse7" class="accordion-collapse collapse" aria-labelledby="flush-heading7" data-bs-parent="#accordionFlushedExample">
+                    <div class="accordion-body">
+                      Yes, it's completely safe, you won't lose your social media accounts. Sign up and check our services and prices also check our safe and secures payment gateways, If you have any more question just create an tickets or contact our support team, we will help you our best.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ITEM 8 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-heading8">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse8" aria-expanded="false" aria-controls="flush-collapse8">
+                      Which social media best for promoting business?
+                    </button>
+                  </h2>
+                  <div id="flush-collapse8" class="accordion-collapse collapse" aria-labelledby="flush-heading8" data-bs-parent="#accordionFlushedExample">
+                    <div class="accordion-body">
+                      We recommend use all Social Media Platforms, more platforms more reach and the greater the recognition.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ITEM 9 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-heading9">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse9" aria-expanded="false" aria-controls="flush-collapse9">
+                      Why you need grow your social media?
+                    </button>
+                  </h2>
+                  <div id="flush-collapse9" class="accordion-collapse collapse" aria-labelledby="flush-heading9" data-bs-parent="#accordionFlushedExample">
+                    <div class="accordion-body">
+                      To make your business stand out from others in the modern competitive market is very difficult. It doesn't matter how good your product. Ineffective marketing does not generate revenue at all.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ITEM 10 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-heading0">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0" aria-expanded="false" aria-controls="flush-collapse0">
+                      Is {{ site["site_name"] }} wholesale SMM Panel?
+                    </button>
+                  </h2>
+                  <div id="flush-collapse0" class="accordion-collapse collapse" aria-labelledby="flush-heading0" data-bs-parent="#accordionFlushedExample">
+                    <div class="accordion-body">
+                      We have lot's of API user , We are providing cheapest smm services and super fast support,Our most of the services working instantly, So you can compare our price with other website and then you can try to connect our api with your panel.
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ## Frequetly Asked Questions -->
+
+
+<!-- Testimonials Slider Start -->
+<section id="testimonialSection">
+    <!-- Testimonial -->
+    <div class="container">
+       <div class="row">
+        <div class="col-lg-12">
+          <div class="top__title">
+            <h5>Testimonial</h5>
+            <h2 class="text-white">Our satisfied clients testimonials</h2>
+            <p class="text-white">
+              6972+ Users Using the <strong>{{ site["site_name"] }}</strong>. See what they say about us
+            </p>
+        </div> 
+            <div class="testimonial">
+                <div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8">
+                        <div class="testimonial__member swiper" id="testimonialMember">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide">
+                                <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1662647062/honestsmm-assets/1_7_bmbfoz.png" alt="Member">
+                              </div>
+                  
+                              <div class="swiper-slide">
+                                <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1662647062/honestsmm-assets/5_hbvbkf.png" alt="Member">
+                              </div>
+                  
+                              <div class="swiper-slide">
+                                <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1662647062/honestsmm-assets/2_5_i4rhgu.png" alt="Member">
+                              </div>
+                  
+                              <div class="swiper-slide">
+                                <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1662647062/honestsmm-assets/3_3_t3hekk.png" alt="Member">
+                              </div>
+                  
+                              <div class="swiper-slide">
+                                <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1662647062/honestsmm-assets/4_1_suebwf.png" alt="Member">
+                              </div>
+                  
+                            </div>
+                          </div>
+                          <div class="testimonial__comments swiper" id="testimonialComments">
+                            <div class="swiper-wrapper">
+                  
+                              <div class="swiper-slide">
+                                <div class="testimonial__item">
+                                  <div class="testimonial__item-stars">
+                  
+                                    <i class="fas fa-star"></i>
+                  
+                                    <i class="fas fa-star"></i>
+                  
+                                    <i class="fas fa-star"></i>
+                  
+                                    <i class="fas fa-star"></i>
+                  
+                                    <i class="fas fa-star"></i>
+                  
+                                  </div>
+                                  <div class="testimonial__item-text">
+                                    I use {{ site["site_name"] }} for my artist Facebook pages, and their service quality, low prices, and 24/7 customer support make growing my brand that much easier. {{ site["site_name"] }} is definitely the best SMM company I have ever used! 
+                                  </div>
+                                  <div class="testimonial__item-name">Steven W.</div>
+                                  <div class="testimonial__item-tag">Influencer</div>
+                                </div>
+                              </div>
+                  
+                              <div class="swiper-slide">
+                                <div class="testimonial__item">
+                                  <div class="testimonial__item-stars">
+                  
+                                    <i class="fas fa-star"></i>
+                  
+                                    <i class="fas fa-star"></i>
+                  
+                                    <i class="fas fa-star"></i>
+                  
+                                    <i class="fas fa-star"></i>
+                  
+                                    <i class="fas fa-star"></i>
+                  
+                                  </div>
+                                  <div class="testimonial__item-text">
+                                  	When I need to get my Instagram posts to go viral, I use power likes and followers and views from {{ site["site_name"] }}, and they always deliver. When I have questions about an order I know I can reach them right away for a speedy solution.
+                                  </div>
+                                  <div class="testimonial__item-name">Jorge M.</div>
+                                  <div class="testimonial__item-tag">CEO, EGC Group</div>
+                                </div>
+                              </div>
+                  
+                              <div class="swiper-slide">
+                                <div class="testimonial__item">
+                                  <div class="testimonial__item-stars">
+                  
+                                    <i class="fas fa-star"></i>
+                  
+                                    <i class="fas fa-star"></i>
+                  
+                                    <i class="fas fa-star"></i>
+                  
+                                    <i class="fas fa-star"></i>
+                  
+                                    <i class="fas fa-star"></i>
+                  
+                                  </div>
+                                  <div class="testimonial__item-text">
+                                    I have used SMM panels for years, and feel like I’ve been through them all, there is no site I trust with my business and social media more than {{ site["site_name"] }}.
+                                  </div>
+                                  <div class="testimonial__item-name">Ray L.</div>
+                                  <div class="testimonial__item-tag">Youtuber</div>
+                                </div>
+                              </div>
+                  
+                              <div class="swiper-slide">
+                                <div class="testimonial__item">
+                                  <div class="testimonial__item-stars">
+                  
+                                    <i class="fas fa-star"></i>
+                  
+                                    <i class="fas fa-star"></i>
+                  
+                                    <i class="fas fa-star"></i>
+                  
+                                    <i class="fas fa-star"></i>
+                  
+                                    <i class="fas fa-star"></i>
+                  
+                                  </div>
+                                  <div class="testimonial__item-text">
+                                    I have used SMM panels for years, and feel like I’ve been through them all, there is no site I trust with my business and social media more than {{ site["site_name"] }}.
+            
+                                  </div>
+                                  <div class="testimonial__item-name">Adam A.</div>
+                                  <div class="testimonial__item-tag">Social Media Manager</div>
+                                </div>
+                              </div>
+                  
+                              <div class="swiper-slide">
+                                <div class="testimonial__item">
+                                  <div class="testimonial__item-stars">
+                  
+                                    <i class="fas fa-star"></i>
+                  
+                                    <i class="fas fa-star"></i>
+                  
+                                    <i class="fas fa-star"></i>
+                  
+                                    <i class="fas fa-star"></i>
+                  
+                                    <i class="fas fa-star"></i>
+                  
+                                  </div>
+                                  <div class="testimonial__item-text">
+                                    I gained millions of followers on social media thanks to {{ site["site_name"] }}, and have been able to work as an influencer and create steady income for myself online so I can travel and do the things I’ve always wanted!  
+                                  </div>
+                                  <div class="testimonial__item-name">Ray L.</div>
+                                  <div class="testimonial__item-tag">Actor.</div>
+                                </div>
+                              </div>
+                  
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-lg-2"></div>
+                </div>
+              </div>
+        </div>
+       </div>
+      </div>
+</section>
+<!-- ## Testimonials Slider Start -->
+
+
+<!-- Payment Gateway we accept -->
+<section id="payment">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="top__title">
+            <h5>Our Payment Method</h5>
+            <h2> Payment Methods We Accept </h2>
+            <p>
+              We accept most of the payment methods those are reliable for safe money transfer. In the below section, you can see some of our payments methods.
+            </p>
+        </div> 
+      </div>
+    </div>
+    
+  </div>
+
+  <div id="paymentSlider">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+            <!-- Slider main container -->
+              <div class="payment">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+                  <div class="swiper-slide">
+                      <div class="payment_image">
+                        <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1662700384/honestsmm-assets/visa_jpbrql.png" class="img-fluid" alt="">
+                      </div>
+                  </div>
+  
+                  <div class="swiper-slide">
+                      <div class="payment_image">
+                        <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1662700384/honestsmm-assets/perfectmoney_wgszxi.png" class="img-fluid" alt="">
+                      </div>
+                  </div>
+                  
+                  <div class="swiper-slide">
+                      <div class="payment_image">
+                        <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1662700384/honestsmm-assets/payeer_ygcgcj.png" class="img-fluid" alt="">
+                      </div>
+                  </div>
+                  <div class="swiper-slide">
+                      <div class="payment_image">
+                        <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1662700384/honestsmm-assets/paytm_napdxw.png" class="img-fluid" alt="">
+                      </div>
+                  </div>
+  
+                  <div class="swiper-slide">
+                      <div class="payment_image">
+                        <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1662700382/honestsmm-assets/crypto_bbhtl2.png" class="img-fluid" alt="">
+                      </div>
+                  </div>
+  
+                  <div class="swiper-slide">
+                      <div class="payment_image">
+                        <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1662700382/honestsmm-assets/coinbase_bcpppn.png" class="img-fluid" alt="">
+                      </div>
+                  </div>
+                  <div class="swiper-slide">
+                      <div class="payment_image">
+                        <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1662700382/honestsmm-assets/bkash_zzpwwx.png" class="img-fluid" alt="">
+                      </div>
+                  </div>
+  
+                  <div class="swiper-slide">
+                      <div class="payment_image">
+                        <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1662700383/honestsmm-assets/nagad_smbg2w.png" class="img-fluid" alt="">
+                      </div>
+                  </div>
+  
+                  <div class="swiper-slide">
+                      <div class="payment_image">
+                        <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1662700382/honestsmm-assets/cashmall_fahzu5.png" class="img-fluid" alt="">
+                      </div>
+                  </div>
+                  <div class="swiper-slide">
+                      <div class="payment_image">
+                        <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1662700383/honestsmm-assets/payoneer_mvbmzp.png" class="img-fluid" alt="">
+                      </div>
+                  </div>
+  
+                  <div class="swiper-slide">
+                      <div class="payment_image">
+                        <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1662700383/honestsmm-assets/mastercard_jd68dy.png" class="img-fluid" alt="">
+                      </div>
+                  </div>
+  
+                  <div class="swiper-slide">
+                      <div class="payment_image">
+                        <img src="/css/panel/honestsmm/res.cloudinary.com/honestsmm/image/upload/v1662700384/honestsmm-assets/skrill_nvocq6.png" class="img-fluid" alt="">
+                      </div>
+                  </div>
+  
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ## Payment Gateway we accept -->
+        </main>
+          
+		
+
+
+       
+
+
+{% include 'footer.twig' %}
